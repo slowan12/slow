@@ -216,10 +216,25 @@ h2 { font-size: clamp(26px, 3.6vw, 38px); line-height: 1.16; }
   border: 1px solid var(--line-soft);
   border-radius: 4px;
   aspect-ratio: 1 / 1;
-  display: grid; place-items: center;
-  padding: clamp(24px, 4vw, 48px);
+  overflow: hidden;
 }
-.shot svg { width: 100%; height: 100%; }
+.shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Bandeau pleine largeur : c'est l'image qui porte la page, pas la vignette. */
+.showcase { position: relative; margin-block: clamp(44px, 6vw, 84px); background: #14100C; }
+.showcase img {
+  display: block; width: 100%;
+  height: clamp(300px, 44vw, 600px); object-fit: cover;
+}
+.showcase .over {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: clamp(22px, 4vw, 52px) var(--gutter);
+  background: linear-gradient(0deg, rgba(10,8,6,.78) 0%, rgba(10,8,6,.34) 56%, transparent 100%);
+}
+.showcase .over-in { max-width: 1240px; margin-inline: auto; }
+.showcase h2 { color: #FFF6E8; font-size: clamp(23px, 3.3vw, 37px); line-height: 1.13; max-width: 20ch; }
+.showcase p { color: rgba(246,238,226,.82); margin-top: 11px; font-size: clamp(14px, 1.5vw, 17px);
+  line-height: 1.6; max-width: 48ch; }
 
 /* ---------------- Bandeau garanties ---------------- */
 
@@ -262,11 +277,11 @@ h2 { font-size: clamp(26px, 3.6vw, 38px); line-height: 1.16; }
 .card { display: flex; flex-direction: column; text-decoration: none; color: inherit; }
 .card .pic {
   background: var(--paper-alt); border: 1px solid var(--line-soft); border-radius: 4px;
-  aspect-ratio: 4 / 5; display: grid; place-items: center; padding: 18px;
+  aspect-ratio: 4 / 5; overflow: hidden;
   transition: border-color 160ms ease;
 }
 .card:hover .pic { border-color: var(--ink-3); }
-.card .pic svg { width: 100%; height: 100%; }
+.card .pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .card h3 { font-size: 16.5px; margin-top: 14px; font-weight: 600; }
 .card .sub { font-size: 13.5px; color: var(--ink-3); margin-top: 2px; }
 .card .p { margin-top: 8px; font-size: 15.5px; font-weight: 600; display: flex; gap: 8px; align-items: baseline; }
@@ -300,11 +315,14 @@ h2 { font-size: clamp(26px, 3.6vw, 38px); line-height: 1.16; }
 .gallery { display: flex; flex-direction: column; gap: 12px; }
 .thumbs { display: flex; gap: 10px; }
 .thumb {
-  width: 62px; height: 62px; flex: none; padding: 7px; cursor: pointer;
+  width: 82px; height: 82px; flex: none; padding: 0; cursor: pointer; overflow: hidden;
   background: var(--paper-alt); border: 1px solid var(--line); border-radius: 3px;
 }
+/* le sujet n'occupe qu'un tiers du carré source : on zoome pour que la vignette
+   reste lisible à 82 px */
+.thumb img { transform: scale(1.5); transform-origin: 50% 46%; }
 .thumb.on { border-color: var(--pine); }
-.thumb svg { width: 100%; height: 100%; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .pdp h1 { font-size: clamp(27px, 3.6vw, 36px); line-height: 1.12; }
 .pdp .prose { margin-top: 16px; }
@@ -506,6 +524,14 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
     </div>
   </div>
 
+  <section class="showcase">
+    <img src="visuels/photo/hero.jpg" alt="La lampe Lueur allumée sur une table, le soir, dans une pièce sombre" loading="lazy" decoding="async">
+    <div class="over"><div class="over-in">
+      <h2>Une lumière basse, et rien qui brûle.</h2>
+      <p>35 W, 2700 K, un variateur. Assez pour faire fondre la cire, assez peu pour rester allumée toute la soirée.</p>
+    </div></div>
+  </section>
+
   <section class="wrap">
     <div class="sec-head">
       <span class="label">Pourquoi</span>
@@ -526,6 +552,14 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
         <p>Une flamme ne se quitte pas des yeux. Une ampoule, si — et le minuteur l'éteint au bout de 2, 4 ou 6 heures.</p>
       </div>
     </div>
+  </section>
+
+  <section class="showcase">
+    <img src="visuels/photo/detail.jpg" alt="Gros plan : l'ampoule éclaire la surface de la cire, qui fond par le dessus" loading="lazy" decoding="async">
+    <div class="over"><div class="over-in">
+      <h2>La chaleur vient du dessus.</h2>
+      <p>La cire fond en surface, le parfum se libère, la mèche reste intacte. Rien ne se consume — c'est pour ça que le pot dure deux fois plus longtemps.</p>
+    </div></div>
   </section>
 
   <section class="band">
@@ -575,6 +609,9 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
       <div class="gallery">
         <div class="shot" id="pdpshot"></div>
         <div class="thumbs" id="pdpthumbs"></div>
+        <div class="shot" style="aspect-ratio:16/10;">
+          <img src="visuels/photo/detail.jpg" alt="Gros plan du bain de cire fondue éclairé par l'ampoule" loading="lazy" decoding="async">
+        </div>
       </div>
 
       <div>
@@ -785,10 +822,11 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
     </div>
 
     <p class="disclaimer">
-      Maquette de boutique. Les illustrations sont provisoires, en attente des photographies
-      du produit ; le paiement n'est pas connecté. L'identité de l'éditeur, les pages légales
-      et la mention de la personne responsable UE au sens du règlement (UE) 2023/988 restent
-      à compléter avant toute mise en vente.
+      Maquette de boutique. <strong>Les visuels sont des rendus, pas des photographies du
+      produit</strong> — aucun échantillon n'a encore été reçu ; ils sont à remplacer avant
+      toute mise en vente. Le paiement n'est pas connecté. L'identité de l'éditeur, les pages
+      légales et la mention de la personne responsable UE au sens du règlement (UE) 2023/988
+      restent à compléter.
     </p>
   </div>
 </footer>
@@ -799,58 +837,24 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
 (function () {
   "use strict";
 
-  /* ---------- Illustrations au trait ---------- */
+  /* ---------- Visuels ----------
+     Rendus produit générés par site/visuels/render-photo.mjs.
+     Ce ne sont pas des photographies : à remplacer dès réception de l'échantillon. */
 
-  function lamp(bodyColor) {
-    return '<svg viewBox="0 0 200 220" fill="none" role="img" aria-label="Lampe chauffe-bougie">'
-      + '<path d="M100 44v34" stroke="' + bodyColor + '" stroke-width="4" stroke-linecap="round"/>'
-      + '<path d="M100 46c0-13-10-20-22-20H54c-6 0-10 4-10 10v138" stroke="' + bodyColor + '" stroke-width="4" stroke-linecap="round"/>'
-      + '<ellipse cx="44" cy="176" rx="34" ry="7" fill="' + bodyColor + '"/>'
-      + '<path d="M72 60h56l-7 26H79z" fill="' + bodyColor + '"/>'
-      + '<ellipse cx="100" cy="86" rx="21" ry="4.6" fill="var(--honey-lit)"/>'
-      + '<path d="M81 90h38l7 42H74z" fill="var(--honey)" opacity="0.11"/>'
-      + '<path d="M78 126h44l-3 42a5 5 0 0 1-5 4.6H86a5 5 0 0 1-5-4.6z" stroke="var(--ink-3)" stroke-width="1.6"/>'
-      + '<path d="M81 138h38l-2.6 30a3 3 0 0 1-3 2.8H86.6a3 3 0 0 1-3-2.8z" fill="var(--wax)"/>'
-      + '<ellipse cx="100" cy="138" rx="19" ry="3.4" fill="var(--honey-lit)"/>'
-      + '<path d="M100 130v7" stroke="var(--ink-3)" stroke-width="1.6" stroke-linecap="round"/>'
-      + '</svg>';
+  var IMG = "visuels/photo/";
+
+  function pic(file, alt) {
+    return '<img src="' + IMG + file + '.jpg" alt="' + alt + '" loading="lazy" decoding="async">';
   }
 
-  function candle() {
-    return '<svg viewBox="0 0 200 220" fill="none" role="img" aria-label="Bougie parfumée en pot">'
-      + '<path d="M62 64h76l-6 106a8 8 0 0 1-8 7.4H76a8 8 0 0 1-8-7.4z" stroke="var(--ink-3)" stroke-width="1.8"/>'
-      + '<path d="M68 84h64l-5 84a5 5 0 0 1-5 4.6H78a5 5 0 0 1-5-4.6z" fill="var(--wax)"/>'
-      + '<ellipse cx="100" cy="84" rx="32" ry="5.6" fill="var(--honey-lit)"/>'
-      + '<path d="M100 72v12" stroke="var(--ink-3)" stroke-width="1.8" stroke-linecap="round"/>'
-      + '<rect x="72" y="112" width="56" height="34" rx="2" fill="var(--paper)" stroke="var(--ink-3)" stroke-width="1.4"/>'
-      + '<path d="M84 124h32M84 134h20" stroke="var(--ink-3)" stroke-width="1.6" stroke-linecap="round"/>'
-      + '</svg>';
+  function lamp(colorId) {
+    var names = { noir: "noir mat", ivoire: "blanc ivoire", laiton: "laiton brossé" };
+    var id = names[colorId] ? colorId : "noir";
+    return pic("lampe-" + id, "Lampe chauffe-bougie Lueur, coloris " + names[id]);
   }
-
-  function box() {
-    return '<svg viewBox="0 0 200 220" fill="none" role="img" aria-label="Coffret cadeau">'
-      + '<path d="M36 84h128l-8 92H44z" stroke="var(--ink-3)" stroke-width="1.8"/>'
-      + '<path d="M28 62h144l-6 22H34z" fill="var(--pine-tint)" stroke="var(--ink-3)" stroke-width="1.8"/>'
-      + '<path d="M92 62h16v114H92z" fill="var(--pine)" opacity="0.55"/>'
-      + '<path d="M100 62c-12-14-24-20-31-13-6 6 1 13 31 13 30 0 37-7 31-13-7-7-19-1-31 13Z" fill="var(--pine)" opacity="0.8"/>'
-      + '</svg>';
-  }
-
-  function bulbs() {
-    return '<svg viewBox="0 0 200 220" fill="none" role="img" aria-label="Deux ampoules GU10">'
-      + '<g transform="translate(-14 4)">'
-      + '<path d="M72 92h56l-10 52a10 10 0 0 1-10 8h-16a10 10 0 0 1-10-8z" stroke="var(--ink-3)" stroke-width="1.8"/>'
-      + '<ellipse cx="100" cy="146" rx="16" ry="5.4" fill="var(--honey-lit)"/>'
-      + '<rect x="78" y="74" width="44" height="18" rx="3" fill="var(--ink-3)" opacity="0.35" stroke="var(--ink-3)" stroke-width="1.6"/>'
-      + '<path d="M86 66v9M114 66v9" stroke="var(--ink-3)" stroke-width="2.4" stroke-linecap="round"/>'
-      + '</g>'
-      + '<g transform="translate(40 40) scale(0.76)">'
-      + '<path d="M72 92h56l-10 52a10 10 0 0 1-10 8h-16a10 10 0 0 1-10-8z" stroke="var(--ink-3)" stroke-width="2.2"/>'
-      + '<rect x="78" y="74" width="44" height="18" rx="3" fill="var(--paper)" stroke="var(--ink-3)" stroke-width="2.2"/>'
-      + '<path d="M86 66v9M114 66v9" stroke="var(--ink-3)" stroke-width="3" stroke-linecap="round"/>'
-      + '</g>'
-      + '</svg>';
-  }
+  function candle() { return pic("bougie-cedre", "Bougie parfumée Lueur 180 g en pot de verre"); }
+  function box()    { return pic("coffret", "Coffret cadeau Lueur fermé par un ruban"); }
+  function bulbs()  { return pic("ampoules", "Deux ampoules halogènes GU10"); }
 
   /* ---------- Catalogue ---------- */
 
@@ -861,7 +865,7 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
   ];
 
   var PRODUCTS = {
-    lampe:   { name: "Lampe chauffe-bougie", sub: "3 coloris · variateur · minuteur", price: 44.90, was: 69.90, art: function () { return lamp("var(--lamp-body)"); }, href: "#/lampe" },
+    lampe:   { name: "Lampe chauffe-bougie", sub: "3 coloris · variateur · minuteur", price: 44.90, was: 69.90, art: function () { return lamp("noir"); }, href: "#/lampe" },
     coffret: { name: "Coffret Lueur",        sub: "Lampe + 2 bougies parfumées",      price: 59.90, was: 84.70, art: box,    href: "#/boutique" },
     bougie:  { name: "Bougie 180 g",         sub: "Cire de soja · 3 parfums",         price: 19.90, was: null,  art: candle, href: "#/boutique" },
     ampoule: { name: "Ampoules GU10",        sub: "Lot de 2 · 35 W · 2700 K",         price: 9.90,  was: null,  art: bulbs,  href: "#/boutique" }
@@ -904,14 +908,14 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
     var html = ORDER.map(cardHtml).join("");
     document.getElementById("homegrid").innerHTML = html;
     document.getElementById("shopgrid").innerHTML = html;
-    document.getElementById("heroshot").innerHTML = lamp("var(--lamp-body)");
+    document.getElementById("heroshot").innerHTML = lamp("noir");
   }
 
   /* ---------- Fiche produit ---------- */
 
   function paintPdp() {
     var c = COLORS[chosen];
-    document.getElementById("pdpshot").innerHTML = lamp(c.body);
+    document.getElementById("pdpshot").innerHTML = lamp(c.id);
     document.getElementById("colorname").textContent = c.name;
     document.getElementById("pdpprice").textContent = eur(c.price);
     document.getElementById("pdpwas").textContent = eur(c.was);
@@ -926,7 +930,7 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
 
     document.getElementById("pdpthumbs").innerHTML = COLORS.map(function (col, i) {
       return '<button class="thumb' + (i === chosen ? ' on' : '') + '" type="button" data-i="' + i + '" '
-        + 'aria-label="Voir le coloris ' + col.name + '">' + lamp(col.body) + '</button>';
+        + 'aria-label="Voir le coloris ' + col.name + '">' + lamp(col.id) + '</button>';
     }).join("");
   }
 
@@ -938,7 +942,7 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
   function artFor(line) {
     if (line.key === "lampe") {
       var col = COLORS.filter(function (c) { return c.id === line.variant; })[0] || COLORS[0];
-      return lamp(col.body);
+      return lamp(col.id);
     }
     return PRODUCTS[line.key].art();
   }

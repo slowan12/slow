@@ -14,7 +14,7 @@ en bas de ce fichier.
 
 | Élément | Prix | Statut |
 |---|---|---|
-| Lampe Chauffe-Bougie Lueur (3 coloris) | 44,90 € / 49,90 € | **Actif, 4 visuels** |
+| Lampe Chauffe-Bougie Lueur (3 coloris) | 44,90 € / 49,90 € | **Actif, 5 visuels** |
 | Coffret Lueur (lampe + 2 bougies) | 59,90 € | **Actif, 1 visuel** |
 | Bougie parfumée 180 g (3 parfums) | 19,90 € | **Actif, 3 visuels** |
 | Ampoules GU10, lot de 2 | 9,90 € | **Actif, 1 visuel** |
@@ -35,10 +35,13 @@ crochets — `[Raison sociale]`, `[SIREN]`, `[contact@domaine.fr]`, le médiateu
 consommation. Une page de mentions légales en ligne avec « [Raison sociale] » écrit dessus est
 pire que pas de page du tout. Remplis les crochets, puis passe-les en visibles.
 
-**Les visuels sont des illustrations, pas des photographies.** Ils sont dessinés à la main dans
-la charte de la marque, ce qui règle le problème de droits posé par les images fournisseur et
-évite d'avoir la même fiche produit que tout le monde. Ils ne convertiront pas aussi bien qu'une
-vraie photo de ton échantillon : remplace-les dès réception.
+**Les visuels sont des rendus, pas des photographies.** Impossible de photographier un article
+qui n'a pas été commandé, et reprendre les images du fournisseur pose un double problème —
+droits d'image et fiche produit identique à celle de tous les autres vendeurs. Ce sont donc des
+rendus composés en SVG/CSS (matières, éclairage directionnel, ombre de contact, profondeur de
+champ, grain), générés par `site/visuels/render-photo.mjs`. Détail dans
+`site/visuels/README.md`. **Remplace-les par de vraies photos dès réception de l'échantillon** :
+c'est ce qui convertit.
 
 ## Le dépôt
 
@@ -98,13 +101,14 @@ Quatre pages avec navigation par ancre (`#/`, `#/lampe`, `#/boutique`, `#/aide`,
 `#/panier`) : accueil, fiche produit avec selecteur de coloris, catalogue, aide et
 panier fonctionnel (ajout, quantites, retrait, sous-total, persistance locale).
 
+Le site est desormais porte par l'image : bandeau d'accueil pleine largeur sur une scene
+d'interieur au crepuscule, second bandeau sur le plan detail du bain de cire, galerie produit
+avec les trois coloris et le plan rapproche, vignettes de catalogue en 4/5.
+
 Direction artistique : papier blanc, encre neutre, un vert pin comme unique couleur
-de marque, un miel reserve a la lumiere de l'ampoule. Illustrations au trait.
-Typographie Schibsted Grotesk (structure) et Newsreader (texte courant).
-Themes clair et sombre.
+de marque, un miel reserve a la lumiere de l'ampoule. Typographie Schibsted Grotesk
+(structure) et Newsreader (texte courant). Themes clair et sombre.
 
-Une premiere direction plus sombre et atmospherique existe dans l'historique git
-(commit « Ajout de la vitrine Lueur Maison ») si tu veux la recuperer.
-
-Les illustrations sont des SVG dessines a la main, a remplacer par les
-photographies des que l'echantillon est recu. Le paiement n'est pas connecte.
+Les visuels sont generes par `site/visuels/render-photo.mjs` (Chromium headless) et
+stockes dans `site/visuels/photo/`. Ce sont des rendus, pas des photographies — voir
+`site/visuels/README.md`. Le paiement n'est pas connecte.
