@@ -1,0 +1,822 @@
+<title>Lueur Maison</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Karla:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<style>
+/* ============================================================
+   LUEUR MAISON
+   Palette : la pièce froide (neutres à biais bleu) contre
+   la lumière de la lampe (ambre 2700 K). Le thème clair est
+   « le matin, lampe éteinte » ; le sombre, « le soir, lampe allumée ».
+   ============================================================ */
+
+:root {
+  /* --- Thème clair : le matin, lampe éteinte --- */
+  --room:        #E9EAED;
+  --room-deep:   #DEE0E5;
+  --raised:      #F4F5F7;
+  --ink:         #16181D;
+  --ink-soft:    #4A4F5A;
+  --ink-mute:    #767C88;
+  --rule:        #C9CCD3;
+  --rule-soft:   #D8DAE0;
+  --glow:        #A8641A;
+  --glow-text:   #8A5214;
+  --glow-hot:    #C98630;
+  --wax:         #CFC6B6;
+  --soot:        #3A3A3C;
+
+  --glow-r: 168; --glow-g: 100; --glow-b: 26;
+  --halo-strength: 0.30;
+
+  --lum: 0.72;
+
+  --f-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --f-body: "Karla", "Helvetica Neue", Arial, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --gutter: clamp(20px, 5vw, 72px);
+  --measure: 62ch;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --room:      #101218;
+    --room-deep: #0A0B0F;
+    --raised:    #191C24;
+    --ink:       #ECE7DE;
+    --ink-soft:  #A9AEBA;
+    --ink-mute:  #767C8B;
+    --rule:      #2A2E38;
+    --rule-soft: #21242C;
+    --glow:      #F3A63E;
+    --glow-text: #F5B45E;
+    --glow-hot:  #FFDDA8;
+    --wax:       #E3D9C8;
+    --soot:      #08080A;
+
+    --glow-r: 243; --glow-g: 166; --glow-b: 62;
+    --halo-strength: 1;
+  }
+}
+
+:root[data-theme="dark"] {
+  --room:      #101218;
+  --room-deep: #0A0B0F;
+  --raised:    #191C24;
+  --ink:       #ECE7DE;
+  --ink-soft:  #A9AEBA;
+  --ink-mute:  #767C8B;
+  --rule:      #2A2E38;
+  --rule-soft: #21242C;
+  --glow:      #F3A63E;
+  --glow-text: #F5B45E;
+  --glow-hot:  #FFDDA8;
+  --wax:       #E3D9C8;
+  --soot:      #08080A;
+
+  --glow-r: 243; --glow-g: 166; --glow-b: 62;
+  --halo-strength: 1;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--room);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 17px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  transition: background 420ms ease;
+}
+
+.wrap {
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+h1, h2, h3 { font-family: var(--f-display); font-weight: 400; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+p { margin: 0; }
+
+.mono {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ---------------- Header ---------------- */
+
+.masthead {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 40;
+  background: color-mix(in srgb, var(--room) 88%, transparent);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.masthead-in {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px; padding-block: 15px;
+}
+.brand {
+  font-family: var(--f-display);
+  font-size: 22px; letter-spacing: 0.01em;
+  display: flex; align-items: center; gap: 10px;
+}
+.brand .dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--glow);
+  box-shadow: 0 0 calc(10px * var(--lum) * var(--halo-strength)) var(--glow);
+}
+.nav { display: flex; gap: 28px; align-items: center; }
+.nav a { color: var(--ink-soft); text-decoration: none; font-size: 14.5px; }
+.nav a:hover { color: var(--glow-text); }
+@media (max-width: 760px) { .nav { display: none; } }
+
+/* ---------------- Hero ---------------- */
+
+.hero { padding-block: clamp(48px, 8vw, 92px) clamp(36px, 5vw, 60px); }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+.eyebrow { color: var(--glow-text); margin-bottom: 22px; }
+
+h1 {
+  font-size: clamp(44px, 7.4vw, 82px);
+  line-height: 1.02;
+  letter-spacing: -0.022em;
+}
+h1 em { font-style: italic; color: var(--glow-text); }
+
+.lede {
+  margin-top: 24px;
+  max-width: 46ch;
+  font-size: clamp(17px, 1.9vw, 19.5px);
+  color: var(--ink-soft);
+}
+
+.hero-cta { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 34px; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 26px;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  font-family: var(--f-body); font-size: 15px; font-weight: 600;
+  text-decoration: none; cursor: pointer;
+  transition: transform 160ms ease, box-shadow 220ms ease, background 200ms ease;
+}
+.btn-primary {
+  background: var(--glow); color: var(--room-deep);
+  box-shadow: 0 0 calc(34px * var(--lum) * var(--halo-strength)) rgba(var(--glow-r), var(--glow-g), var(--glow-b), 0.34);
+}
+:root[data-theme="light"] .btn-primary,
+:root:not([data-theme="dark"]) .btn-primary { color: #FBF9F6; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .btn-primary { color: var(--room-deep); }
+}
+.btn-primary:hover { transform: translateY(-1px); }
+.btn-ghost { border-color: var(--rule); color: var(--ink); }
+.btn-ghost:hover { border-color: var(--glow); color: var(--glow-text); }
+
+.price-inline { font-family: var(--f-mono); font-size: 13px; color: var(--ink-mute); }
+.price-inline s { color: var(--ink-mute); opacity: 0.66; }
+
+/* ---------------- La lampe ---------------- */
+
+.stage {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  max-width: 100%;
+  border-radius: 3px;
+  overflow: hidden;
+  background:
+    radial-gradient(118% 86% at 50% 20%,
+      rgba(var(--glow-r), var(--glow-g), var(--glow-b), calc(0.30 * var(--lum) * var(--halo-strength))) 0%,
+      rgba(var(--glow-r), var(--glow-g), var(--glow-b), calc(0.07 * var(--lum) * var(--halo-strength))) 42%,
+      transparent 74%),
+    linear-gradient(176deg, var(--raised), var(--room-deep));
+  border: 1px solid var(--rule-soft);
+  transition: background 420ms ease;
+}
+.stage svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+.beam { opacity: calc(var(--lum) * var(--halo-strength)); transition: opacity 260ms ease; }
+.filament { opacity: calc(0.25 + 0.75 * var(--lum)); transition: opacity 260ms ease; }
+.pool {
+  transform-origin: 50% 100%;
+  transform: scaleY(calc(0.22 + 0.78 * var(--lum)));
+  transition: transform 420ms cubic-bezier(.4,0,.2,1);
+}
+
+/* Variateur */
+.dimmer {
+  margin-top: 22px;
+  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+}
+.dimmer label { color: var(--ink-mute); white-space: nowrap; }
+.dimmer input[type="range"] {
+  flex: 1 1 180px;
+  min-width: 150px;
+  appearance: none; -webkit-appearance: none;
+  height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--glow) calc(var(--lum) * 100%), var(--rule) calc(var(--lum) * 100%));
+  cursor: pointer;
+}
+.dimmer input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 19px; height: 19px; border-radius: 50%;
+  background: var(--glow); border: 3px solid var(--room);
+  box-shadow: 0 0 calc(16px * var(--lum) * var(--halo-strength)) var(--glow);
+}
+.dimmer input[type="range"]::-moz-range-thumb {
+  width: 19px; height: 19px; border-radius: 50%; border: 3px solid var(--room);
+  background: var(--glow);
+}
+.dimmer input[type="range"]:focus-visible { outline: 2px solid var(--glow); outline-offset: 6px; }
+.readout { color: var(--glow-text); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* ---------------- Fiche technique ---------------- */
+
+.specs {
+  border-block: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+@media (max-width: 860px) { .specs { grid-template-columns: repeat(2, 1fr); } }
+
+.spec {
+  padding: 26px 22px 26px 0;
+  border-right: 1px solid var(--rule-soft);
+}
+.spec:last-child { border-right: 0; }
+@media (max-width: 860px) {
+  .spec:nth-child(2n) { border-right: 0; }
+  .spec { border-bottom: 1px solid var(--rule-soft); }
+}
+.spec .v {
+  font-family: var(--f-mono); font-size: 22px; font-weight: 500;
+  color: var(--ink); letter-spacing: -0.02em; display: block;
+}
+.spec .k { color: var(--ink-mute); font-size: 13.5px; margin-top: 5px; display: block; }
+
+/* ---------------- Sections ---------------- */
+
+section { padding-block: clamp(64px, 9vw, 116px); }
+
+.sec-head { max-width: var(--measure); margin-bottom: clamp(36px, 5vw, 56px); }
+.sec-head .eyebrow { margin-bottom: 16px; }
+h2 { font-size: clamp(31px, 4.4vw, 47px); line-height: 1.1; }
+.sec-head p { margin-top: 18px; color: var(--ink-soft); }
+
+/* Le coût de la flamme */
+.costs { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 4vw, 52px); }
+@media (max-width: 820px) { .costs { grid-template-columns: 1fr; gap: 0; } }
+
+.cost { padding-top: 22px; border-top: 1px solid var(--rule); }
+@media (max-width: 820px) { .cost { padding-block: 26px; } }
+.cost h3 { font-size: 25px; margin-bottom: 10px; }
+.cost p { color: var(--ink-soft); font-size: 16px; }
+.cost .tag { color: var(--glow-text); display: block; margin-bottom: 14px; }
+
+/* Comparatif suie */
+.jars {
+  margin-top: clamp(44px, 6vw, 76px);
+  display: grid;
+  grid-template-columns: minmax(0, 172px) minmax(0, 172px) minmax(0, 1fr);
+  gap: clamp(18px, 3.5vw, 52px);
+  align-items: center;
+}
+@media (max-width: 820px) {
+  .jars { grid-template-columns: 1fr 1fr; gap: 24px clamp(16px, 5vw, 34px); }
+  .jars .jar-note { grid-column: 1 / -1; }
+}
+.jar-cell { text-align: center; }
+.jar-cell svg { width: 100%; height: auto; max-width: 100%; display: block; }
+.jar-cell .cap { margin-top: 14px; color: var(--ink-mute); }
+.jar-note { border-left: 1px solid var(--rule); padding-left: clamp(20px, 3vw, 34px); }
+@media (max-width: 820px) {
+  .jar-note { border-left: 0; border-top: 1px solid var(--rule); padding-left: 0; padding-top: 24px; }
+}
+.jar-note h3 { font-size: clamp(22px, 2.6vw, 27px); margin-bottom: 12px; }
+.jar-note p { color: var(--ink-soft); font-size: 15.5px; max-width: 40ch; }
+
+/* Graphique durée */
+.chart-block {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(30px, 5vw, 64px); align-items: center;
+}
+@media (max-width: 880px) { .chart-block { grid-template-columns: 1fr; } }
+.chart-wrap { overflow-x: auto; }
+.chart-wrap svg { width: 100%; height: auto; min-width: 280px; display: block; }
+.ct { font-family: var(--f-mono); font-size: 11px; fill: var(--ink-mute); letter-spacing: 0.06em; }
+.ct-val { font-family: var(--f-mono); font-size: 15px; font-weight: 500; fill: var(--ink); }
+.ct-lab { font-family: var(--f-body); font-size: 13px; fill: var(--ink-soft); }
+.note { margin-top: 20px; color: var(--ink-mute); font-size: 14.5px; max-width: 42ch; }
+
+/* ---------------- Catalogue ---------------- */
+
+.shelf { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--rule-soft); border: 1px solid var(--rule-soft); }
+@media (max-width: 940px) { .shelf { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .shelf { grid-template-columns: 1fr; } }
+
+.item {
+  background: var(--room);
+  padding: 28px 24px 26px;
+  display: flex; flex-direction: column; gap: 10px;
+  transition: background 200ms ease;
+}
+.item:hover { background: var(--raised); }
+.item .thumb { height: 108px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px; }
+.item .thumb svg { height: 100%; width: auto; max-width: 100%; }
+.item h3 { font-size: 21px; line-height: 1.22; }
+.item .desc { color: var(--ink-mute); font-size: 14.5px; flex-grow: 1; }
+.item .cost-line {
+  font-family: var(--f-mono); font-size: 15px; color: var(--ink);
+  display: flex; align-items: baseline; gap: 9px; padding-top: 6px;
+  font-variant-numeric: tabular-nums;
+}
+.item .cost-line s { font-size: 12.5px; color: var(--ink-mute); }
+.badge {
+  align-self: flex-start;
+  font-family: var(--f-mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--glow-text); border: 1px solid var(--glow); border-radius: 999px;
+  padding: 3px 9px;
+}
+
+/* ---------------- FAQ ---------------- */
+
+.faq { display: grid; grid-template-columns: 1fr 1fr; gap: 0 clamp(34px, 6vw, 76px); }
+@media (max-width: 820px) { .faq { grid-template-columns: 1fr; } }
+.qa { padding-block: 24px; border-top: 1px solid var(--rule-soft); }
+.qa h3 { font-family: var(--f-body); font-size: 16.5px; font-weight: 700; margin-bottom: 8px; }
+.qa p { color: var(--ink-soft); font-size: 15.5px; }
+
+/* ---------------- Pied de page ---------------- */
+
+.closer {
+  border-top: 1px solid var(--rule);
+  padding-block: clamp(56px, 8vw, 92px) 30px;
+}
+.closer-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(30px, 5vw, 60px); align-items: end; }
+@media (max-width: 820px) { .closer-grid { grid-template-columns: 1fr; align-items: start; } }
+.closer h2 { font-size: clamp(28px, 4vw, 42px); }
+
+.legal {
+  margin-top: 52px; padding-top: 22px; border-top: 1px solid var(--rule-soft);
+  display: flex; flex-wrap: wrap; gap: 10px 30px; justify-content: space-between;
+  color: var(--ink-mute); font-size: 13px;
+}
+.legal a { color: var(--ink-mute); text-decoration: none; }
+.legal a:hover { color: var(--glow-text); }
+.disclaimer {
+  margin-top: 18px; color: var(--ink-mute); font-size: 12.5px;
+  max-width: 78ch; line-height: 1.6;
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--glow); outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 1ms !important; animation-duration: 1ms !important; }
+}
+</style>
+
+<header class="masthead">
+  <div class="wrap masthead-in">
+    <div class="brand"><span class="dot"></span> Lueur Maison</div>
+    <nav class="nav">
+      <a href="#pourquoi">Pourquoi</a>
+      <a href="#duree">La durée</a>
+      <a href="#catalogue">Le catalogue</a>
+      <a href="#questions">Questions</a>
+    </nav>
+    <a class="btn btn-ghost" href="#catalogue">Voir la lampe</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<div class="wrap hero">
+  <div class="hero-grid">
+    <div>
+      <p class="mono eyebrow">Lampe chauffe-bougie · 2700 K</p>
+      <h1>La bougie<br>qu'on <em>n'allume pas.</em></h1>
+      <p class="lede">
+        Une ampoule de 35 W fait fondre la cire par le dessus. Le parfum se libère,
+        la mèche reste intacte, le verre reste propre. Votre bougie dure environ
+        deux fois plus longtemps — parce qu'elle ne se consume plus.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#catalogue">Découvrir la lampe</a>
+        <span class="price-inline">44,90 € &nbsp;<s>69,90 €</s>&nbsp; · livraison offerte</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="stage">
+        <svg viewBox="0 0 400 500" role="img" aria-label="Illustration d'une lampe chauffe-bougie allumée au-dessus d'une bougie en pot, la cire fondue en surface.">
+          <defs>
+            <radialGradient id="halo" cx="50%" cy="34%" r="52%">
+              <stop offset="0%" stop-color="var(--glow-hot)" stop-opacity="0.58"/>
+              <stop offset="45%" stop-color="var(--glow)" stop-opacity="0.19"/>
+              <stop offset="100%" stop-color="var(--glow)" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="cone" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="var(--glow-hot)" stop-opacity="0.30"/>
+              <stop offset="100%" stop-color="var(--glow)" stop-opacity="0.015"/>
+            </linearGradient>
+            <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="var(--ink-mute)"/>
+              <stop offset="38%" stop-color="var(--ink-soft)"/>
+              <stop offset="100%" stop-color="var(--ink-mute)"/>
+            </linearGradient>
+          </defs>
+
+          <!-- halo diffus -->
+          <ellipse class="beam" cx="200" cy="205" rx="185" ry="165" fill="url(#halo)"/>
+          <!-- faisceau -->
+          <path class="beam" d="M152 168 L248 168 L306 372 L94 372 Z" fill="url(#cone)"/>
+
+          <!-- potence -->
+          <rect x="196" y="96" width="8" height="82" rx="4" fill="url(#metal)"/>
+          <path d="M196 100 Q196 74 172 74 L108 74 Q96 74 96 86 L96 398" fill="none" stroke="url(#metal)" stroke-width="8" stroke-linecap="round"/>
+
+          <!-- socle lesté -->
+          <ellipse cx="96" cy="402" rx="62" ry="15" fill="var(--ink-soft)"/>
+          <ellipse cx="96" cy="396" rx="62" ry="15" fill="url(#metal)"/>
+
+          <!-- abat-jour -->
+          <path d="M140 120 L260 120 L248 172 L152 172 Z" fill="var(--ink-soft)"/>
+          <path d="M140 120 L260 120 L256 134 L144 134 Z" fill="var(--ink-mute)" opacity="0.55"/>
+          <ellipse cx="200" cy="172" rx="48" ry="9" fill="var(--room-deep)"/>
+
+          <!-- ampoule GU10 -->
+          <ellipse class="filament" cx="200" cy="170" rx="21" ry="7" fill="var(--glow-hot)"/>
+          <ellipse class="filament" cx="200" cy="170" rx="11" ry="4" fill="#FFF6E4"/>
+
+          <!-- bougie : verre -->
+          <path d="M156 330 L244 330 L240 430 Q239 440 229 440 L171 440 Q161 440 160 430 Z"
+                fill="var(--raised)" stroke="var(--rule)" stroke-width="1.5"/>
+          <!-- cire solide -->
+          <path d="M160 356 L240 356 L237 428 Q236 435 229 435 L171 435 Q164 435 163 428 Z" fill="var(--wax)"/>
+          <!-- bain de fusion -->
+          <g class="pool">
+            <path d="M160 356 L240 356 L239 380 L161 380 Z" fill="var(--glow-hot)" opacity="0.5"/>
+          </g>
+          <ellipse cx="200" cy="356" rx="40" ry="7" fill="var(--glow-hot)" opacity="0.9"/>
+          <!-- mèche, éteinte -->
+          <rect x="199" y="344" width="2.5" height="13" rx="1.2" fill="var(--ink-mute)"/>
+          <!-- reflet du verre -->
+          <path d="M167 344 L172 344 L170 428 L166 424 Z" fill="var(--ink)" opacity="0.06"/>
+
+          <!-- surface -->
+          <path d="M40 440 L360 440" stroke="var(--rule)" stroke-width="1"/>
+        </svg>
+      </div>
+
+      <div class="dimmer">
+        <label class="mono" for="lum">Variateur</label>
+        <input id="lum" type="range" min="6" max="100" value="72"
+               aria-label="Intensité de la lampe" aria-describedby="lumout">
+        <span class="mono readout" id="lumout">72 % · 2700 K</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FICHE TECHNIQUE ============ -->
+<div class="wrap">
+  <div class="specs">
+    <div class="spec"><span class="v">35 W</span><span class="k">Ampoule halogène GU10</span></div>
+    <div class="spec"><span class="v">2700 K</span><span class="k">Blanc chaud, variateur</span></div>
+    <div class="spec"><span class="v">26–34 cm</span><span class="k">Hauteur réglable</span></div>
+    <div class="spec"><span class="v">Ø 8 cm</span><span class="k">Bougies compatibles</span></div>
+    <div class="spec"><span class="v">2·4·6 h</span><span class="k">Minuteur d'extinction</span></div>
+  </div>
+</div>
+
+<!-- ============ POURQUOI ============ -->
+<section id="pourquoi" class="wrap">
+  <div class="sec-head">
+    <p class="mono eyebrow">Ce que la flamme vous coûte</p>
+    <h2>Une bougie à 35 €, brûlée, c'est 35 € qui partent en fumée.</h2>
+    <p>
+      La flamme ne se contente pas de diffuser le parfum : elle détruit le produit
+      qui le porte. Trois conséquences que tout le monde connaît sans y penser.
+    </p>
+  </div>
+
+  <div class="costs">
+    <div class="cost">
+      <span class="mono tag">La cire</span>
+      <h3>Elle disparaît</h3>
+      <p>Brûler, c'est consommer la cire. Faire fondre, non : la matière refroidit,
+         se re-solidifie, et repart au cycle suivant. Tant qu'il reste de la cire,
+         la bougie fonctionne.</p>
+    </div>
+    <div class="cost">
+      <span class="mono tag">La suie</span>
+      <h3>Elle s'accroche</h3>
+      <p>Le noir sur le verre est un dépôt de combustion incomplète. Sans mèche
+         allumée, il n'y a rien à déposer : le bocal reste transparent du premier
+         jour au dernier.</p>
+    </div>
+    <div class="cost">
+      <span class="mono tag">La vigilance</span>
+      <h3>Elle vous suit</h3>
+      <p>Une flamme ne se quitte pas des yeux. Une ampoule, si — et le minuteur
+         l'éteint tout seul au bout de deux, quatre ou six heures.</p>
+    </div>
+  </div>
+
+  <div class="jars">
+    <div class="jar-cell">
+      <svg viewBox="0 0 160 200" role="img" aria-label="Bocal de bougie noirci par la suie après quarante heures de combustion à la flamme.">
+        <path d="M30 40 L130 40 L124 176 Q123 188 111 188 L49 188 Q37 188 36 176 Z"
+              fill="var(--raised)" stroke="var(--rule)" stroke-width="1.5"/>
+        <path d="M34 48 L126 48 L122 120 L38 120 Z" fill="var(--soot)" opacity="0.82"/>
+        <path d="M38 118 L122 118 L119 172 Q118 181 110 181 L50 181 Q42 181 41 172 Z" fill="var(--wax)"/>
+        <ellipse cx="80" cy="118" rx="42" ry="6" fill="var(--soot)" opacity="0.5"/>
+        <path d="M44 56 L50 56 L47 172 L42 166 Z" fill="var(--ink)" opacity="0.05"/>
+      </svg>
+      <p class="mono cap">40 h à la flamme</p>
+    </div>
+    <div class="jar-cell">
+      <svg viewBox="0 0 160 200" role="img" aria-label="Bocal de bougie resté parfaitement transparent après quatre-vingts heures sur la lampe.">
+        <path d="M30 40 L130 40 L124 176 Q123 188 111 188 L49 188 Q37 188 36 176 Z"
+              fill="var(--raised)" stroke="var(--rule)" stroke-width="1.5"/>
+        <path d="M38 118 L122 118 L119 172 Q118 181 110 181 L50 181 Q42 181 41 172 Z" fill="var(--wax)"/>
+        <ellipse cx="80" cy="118" rx="42" ry="6" fill="var(--glow-hot)" opacity="0.85"/>
+        <path d="M44 56 L50 56 L47 172 L42 166 Z" fill="var(--ink)" opacity="0.05"/>
+      </svg>
+      <p class="mono cap">80 h sur la lampe</p>
+    </div>
+
+    <div class="jar-note">
+      <h3>Le même verre, au même âge.</h3>
+      <p>
+        À gauche, le dépôt de combustion après quarante heures de mèche allumée.
+        À droite, la même bougie fondue par le dessus : il n'y a pas de combustion,
+        donc rien à déposer sur la paroi. C'est le seul argument de cette page
+        qu'on peut vérifier à l'œil nu, dans son propre salon.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DURÉE ============ -->
+<section id="duree" class="wrap">
+  <div class="chart-block">
+    <div>
+      <p class="mono eyebrow">Durée d'une bougie de 180 g</p>
+      <h2>Le même pot de cire, deux fois plus de soirées.</h2>
+      <p class="note" style="margin-top:20px; max-width:44ch; color:var(--ink-soft); font-size:16.5px;">
+        Une bougie de 180 g en cire de soja tient environ quarante heures lorsqu'on
+        la brûle. Posée sur la lampe, la cire n'étant plus consommée, elle se
+        refond indéfiniment : on atteint couramment le double avant que le parfum
+        ne s'épuise.
+      </p>
+      <p class="note">
+        Ordres de grandeur constatés sur une bougie de soja de 180 g à mèche coton.
+        La durée réelle dépend de la cire, de la charge en parfum et du temps
+        d'utilisation par séance.
+      </p>
+    </div>
+
+    <div class="chart-wrap">
+      <svg viewBox="0 0 440 230" role="img" aria-label="Graphique : 40 heures de durée à la flamme contre 80 heures sur la lampe chauffe-bougie.">
+        <!-- grille -->
+        <g>
+          <line x1="20" y1="30" x2="20" y2="176" stroke="var(--rule)" stroke-width="1"/>
+          <line x1="122" y1="30" x2="122" y2="176" stroke="var(--rule-soft)" stroke-width="1"/>
+          <line x1="224" y1="30" x2="224" y2="176" stroke="var(--rule-soft)" stroke-width="1"/>
+          <line x1="326" y1="30" x2="326" y2="176" stroke="var(--rule-soft)" stroke-width="1"/>
+          <line x1="428" y1="30" x2="428" y2="176" stroke="var(--rule-soft)" stroke-width="1"/>
+        </g>
+
+        <!-- barre 1 : flamme, 40 h -->
+        <text class="ct-lab" x="20" y="52">À la flamme</text>
+        <rect x="20" y="62" width="204" height="26" fill="var(--ink-mute)" opacity="0.45"/>
+        <text class="ct-val" x="236" y="81">40 h</text>
+
+        <!-- barre 2 : lampe, 80 h -->
+        <text class="ct-lab" x="20" y="126">Sur la lampe Lueur</text>
+        <rect x="20" y="136" width="408" height="26" fill="var(--glow)"/>
+        <text class="ct-val" x="428" y="126" text-anchor="end">80 h</text>
+
+        <!-- axe -->
+        <line x1="20" y1="176" x2="428" y2="176" stroke="var(--rule)" stroke-width="1"/>
+        <text class="ct" x="20" y="196" text-anchor="middle">0</text>
+        <text class="ct" x="122" y="196" text-anchor="middle">20</text>
+        <text class="ct" x="224" y="196" text-anchor="middle">40</text>
+        <text class="ct" x="326" y="196" text-anchor="middle">60</text>
+        <text class="ct" x="424" y="196" text-anchor="middle">80</text>
+        <text class="ct" x="224" y="219" text-anchor="middle">heures d'utilisation</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATALOGUE ============ -->
+<section id="catalogue" class="wrap">
+  <div class="sec-head">
+    <p class="mono eyebrow">Le catalogue</p>
+    <h2>Quatre références. Pas une de plus.</h2>
+    <p>La lampe, de quoi l'alimenter, et le coffret pour l'offrir.</p>
+  </div>
+
+  <div class="shelf">
+    <article class="item">
+      <div class="thumb">
+        <svg viewBox="0 0 120 130" role="img" aria-label="Lampe chauffe-bougie">
+          <path d="M58 30 L62 30 L62 60 L58 60 Z" fill="var(--ink-soft)"/>
+          <path d="M58 32 Q58 18 44 18 L24 18 Q18 18 18 24 L18 110" fill="none" stroke="var(--ink-soft)" stroke-width="4" stroke-linecap="round"/>
+          <ellipse cx="18" cy="112" rx="22" ry="5" fill="var(--ink-soft)"/>
+          <path d="M38 40 L82 40 L77 62 L43 62 Z" fill="var(--ink-soft)"/>
+          <ellipse cx="60" cy="62" rx="17" ry="3.5" fill="var(--glow-hot)"/>
+          <ellipse cx="60" cy="74" rx="26" ry="10" fill="var(--glow)" opacity="0.16"/>
+          <path d="M44 92 L76 92 L74 118 Q73.5 122 70 122 L50 122 Q46.5 122 46 118 Z" fill="var(--raised)" stroke="var(--rule)" stroke-width="1"/>
+          <path d="M46 99 L74 99 L72.5 117 Q72 120 69 120 L51 120 Q48 120 47.5 117 Z" fill="var(--wax)"/>
+          <ellipse cx="60" cy="99" rx="14" ry="2.6" fill="var(--glow-hot)"/>
+        </svg>
+      </div>
+      <span class="badge">Le produit</span>
+      <h3>Lampe chauffe-bougie</h3>
+      <p class="desc">Noir mat, blanc ivoire ou laiton brossé. Variateur, minuteur, deux ampoules fournies.</p>
+      <p class="cost-line">44,90 € <s>69,90 €</s></p>
+    </article>
+
+    <article class="item">
+      <div class="thumb">
+        <svg viewBox="0 0 120 130" role="img" aria-label="Coffret cadeau">
+          <path d="M16 52 L104 52 L98 118 L22 118 Z" fill="var(--raised)" stroke="var(--rule)" stroke-width="1.5"/>
+          <path d="M12 38 L108 38 L104 54 L16 54 Z" fill="var(--ink-soft)" opacity="0.28"/>
+          <rect x="54" y="38" width="12" height="80" fill="var(--glow)" opacity="0.5"/>
+          <path d="M60 38 Q44 22 34 32 Q28 40 60 40 Q92 40 86 32 Q76 22 60 38 Z" fill="var(--glow)" opacity="0.72"/>
+          <ellipse cx="60" cy="52" rx="48" ry="5" fill="var(--glow)" opacity="0.1"/>
+        </svg>
+      </div>
+      <span class="badge">Prêt à offrir</span>
+      <h3>Coffret Lueur</h3>
+      <p class="desc">La lampe, deux bougies parfumées de 180 g et une ampoule de rechange, dans un écrin.</p>
+      <p class="cost-line">59,90 € <s>84,70 €</s></p>
+    </article>
+
+    <article class="item">
+      <div class="thumb">
+        <svg viewBox="0 0 120 130" role="img" aria-label="Bougie parfumée en pot">
+          <path d="M34 44 L86 44 L81 114 Q80 120 74 120 L46 120 Q40 120 39 114 Z" fill="var(--raised)" stroke="var(--rule)" stroke-width="1.5"/>
+          <path d="M38 56 L82 56 L78 112 Q77.5 116 73 116 L47 116 Q42.5 116 42 112 Z" fill="var(--wax)"/>
+          <ellipse cx="60" cy="56" rx="22" ry="4" fill="var(--glow-hot)" opacity="0.8"/>
+          <rect x="58.8" y="44" width="2.4" height="13" rx="1.2" fill="var(--ink-mute)"/>
+          <rect x="42" y="72" width="36" height="22" rx="1" fill="var(--room)" opacity="0.9"/>
+          <path d="M48 80 L72 80 M48 86 L64 86" stroke="var(--ink-mute)" stroke-width="1.4"/>
+        </svg>
+      </div>
+      <span class="badge">Recharge</span>
+      <h3>Bougie 180 g</h3>
+      <p class="desc">Cire de soja. Bois de cèdre, vanille &amp; ambre, ou figue &amp; cassis.</p>
+      <p class="cost-line">19,90 €</p>
+    </article>
+
+    <article class="item">
+      <div class="thumb">
+        <svg viewBox="0 0 120 130" role="img" aria-label="Deux ampoules GU10 de rechange">
+          <g transform="translate(-8 0)">
+            <path d="M44 52 L76 52 L70 86 Q69 92 60 92 Q51 92 50 86 Z" fill="var(--raised)" stroke="var(--rule)" stroke-width="1.5"/>
+            <ellipse cx="60" cy="86" rx="10" ry="4" fill="var(--glow-hot)" opacity="0.85"/>
+            <rect x="48" y="42" width="24" height="11" rx="2" fill="var(--ink-soft)"/>
+            <rect x="52" y="34" width="3" height="9" rx="1.5" fill="var(--ink-mute)"/>
+            <rect x="65" y="34" width="3" height="9" rx="1.5" fill="var(--ink-mute)"/>
+          </g>
+          <g transform="translate(26 22) scale(0.82)">
+            <path d="M44 52 L76 52 L70 86 Q69 92 60 92 Q51 92 50 86 Z" fill="var(--raised)" stroke="var(--rule)" stroke-width="1.5"/>
+            <ellipse cx="60" cy="86" rx="10" ry="4" fill="var(--glow-hot)" opacity="0.5"/>
+            <rect x="48" y="42" width="24" height="11" rx="2" fill="var(--ink-soft)"/>
+            <rect x="52" y="34" width="3" height="9" rx="1.5" fill="var(--ink-mute)"/>
+            <rect x="65" y="34" width="3" height="9" rx="1.5" fill="var(--ink-mute)"/>
+          </g>
+        </svg>
+      </div>
+      <span class="badge">Rechange</span>
+      <h3>Ampoules GU10</h3>
+      <p class="desc">Lot de deux, 35 W, 2700 K, compatibles variateur. Environ 2 000 h chacune.</p>
+      <p class="cost-line">9,90 €</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ QUESTIONS ============ -->
+<section id="questions" class="wrap">
+  <div class="sec-head">
+    <p class="mono eyebrow">Questions</p>
+    <h2>Ce qu'on nous demande avant de commander.</h2>
+  </div>
+
+  <div class="faq">
+    <div class="qa">
+      <h3>Ça marche avec n'importe quelle bougie ?</h3>
+      <p>Avec toute bougie en pot jusqu'à 10 cm de diamètre. Les bougies à trois mèches
+         ne fondent que partiellement, et les bougies pilier ont besoin d'une flamme.</p>
+    </div>
+    <div class="qa">
+      <h3>Est-ce que ça chauffe la pièce ?</h3>
+      <p>Non. Trente-cinq watts chauffent la surface de la cire, pas une pièce. Si vous
+         cherchez un chauffage d'appoint, ce n'est pas ce produit.</p>
+    </div>
+    <div class="qa">
+      <h3>Combien de temps avant que ça sente ?</h3>
+      <p>Entre dix et vingt minutes selon la bougie. La diffusion est plus lente et plus
+         douce qu'avec une flamme — beaucoup la trouvent moins agressive.</p>
+    </div>
+    <div class="qa">
+      <h3>Je peux la laisser allumée la nuit ?</h3>
+      <p>Le minuteur est là pour ça : deux, quatre ou six heures, puis extinction.
+         Comme tout appareil électrique, elle ne doit pas rester sans surveillance
+         de façon prolongée.</p>
+    </div>
+    <div class="qa">
+      <h3>Quel est le délai de livraison ?</h3>
+      <p>Expédition sous 24 à 48 h, puis 8 à 15 jours ouvrés en France métropolitaine,
+         avec suivi. Nous préférons annoncer un délai honnête qu'une promesse intenable.</p>
+    </div>
+    <div class="qa">
+      <h3>Et si ça ne me plaît pas ?</h3>
+      <p>Trente jours pour nous la renvoyer, remboursement intégral — en plus du droit
+         de rétractation légal de quatorze jours.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap closer">
+  <div class="closer-grid">
+    <div>
+      <h2>Éteignez la flamme.<br>Gardez la lumière.</h2>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#catalogue">Commander — 44,90 €</a>
+        <span class="price-inline">Livraison offerte · 30 jours pour changer d'avis</span>
+      </div>
+    </div>
+    <div>
+      <p class="mono" style="color:var(--ink-mute); margin-bottom:10px;">Lueur Maison</p>
+      <p style="color:var(--ink-soft); font-size:15px; max-width:34ch;">
+        Une lampe, trois bougies, des ampoules de rechange. Nous ne vendons rien
+        d'autre, et c'est volontaire.
+      </p>
+    </div>
+  </div>
+
+  <div class="legal">
+    <span>© 2026 Lueur Maison</span>
+    <span>
+      <a href="#questions">Mentions légales</a> ·
+      <a href="#questions">CGV</a> ·
+      <a href="#questions">Livraison</a> ·
+      <a href="#questions">Rétractation</a>
+    </span>
+    <span class="mono">Conformité CE · 2014/35/UE · 2014/30/UE</span>
+  </div>
+
+  <p class="disclaimer">
+    Maquette de boutique. Les illustrations sont provisoires, en attente des
+    photographies du produit ; les pages légales, l'identité de l'éditeur et la
+    mention de la personne responsable UE au sens du règlement (UE) 2023/988
+    restent à compléter avant toute mise en vente.
+  </p>
+</footer>
+
+<script>
+(function () {
+  var slider = document.getElementById('lum');
+  var out = document.getElementById('lumout');
+  if (!slider || !out) return;
+
+  function apply() {
+    var pct = parseInt(slider.value, 10);
+    document.documentElement.style.setProperty('--lum', (pct / 100).toFixed(3));
+    out.textContent = pct + ' % · 2700 K';
+  }
+
+  slider.addEventListener('input', apply);
+  apply();
+})();
+</script>

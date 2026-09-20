@@ -60,3 +60,17 @@ shopify-import/produits.csv     Sauvegarde / réimport du catalogue
   [data.inpi.fr](https://data.inpi.fr) et celle du domaine avant de l'utiliser.
 - Les pages légales sont des **modèles à compléter et à faire relire**, pas des documents validés.
 - Rien ici n'est un conseil juridique, comptable ou financier.
+
+## La vitrine
+
+`site/vitrine.html` — maquette de la page d'accueil, publiée ici :
+https://claude.ai/artifact/RfYSscVv9ia1i4bHmGzo4Y
+
+Direction artistique : la pièce sombre contre la lumière chaude. Les neutres tirent
+vers le bleu froid (la pièce), l'accent est un ambre 2700 K (la lampe). Le thème
+clair correspond au matin, lampe éteinte ; le thème sombre au soir, lampe allumée.
+Le variateur du hero pilote réellement l'éclairage de la page.
+
+Typographie : Instrument Serif (titres), Karla (texte), JetBrains Mono (mesures).
+Les illustrations sont des SVG dessinés à la main — à remplacer par les
+photographies dès que l'échantillon est reçu.
