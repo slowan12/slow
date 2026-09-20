@@ -54,6 +54,7 @@ boutique/faq.md                 FAQ à coller sur la fiche produit
 boutique/emails-relance.md      Séquences panier abandonné et post-achat
 boutique/pages-legales/         Modèles : mentions légales, livraison, rétractation
 ops/checklist-lancement.md      Ordre d'exécution avant la première pub
+ops/chaine-de-commande.md       Audit : ce qui casserait si une commande tombait
 ops/conformite-ce-gpsr.md       CE, GPSR, DEEE — obligatoire sur un produit électrique
 ops/dsers-connexion.md          Installation DSers, mapping, grille de sourcing, seuils
 marketing/nom-de-marque.md      Le nom CERA : pourquoi, et ce qui reste a verifier
