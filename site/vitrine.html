@@ -286,6 +286,14 @@ h2 { font-size: clamp(26px, 3.6vw, 38px); line-height: 1.16; }
 .card .sub { font-size: 13.5px; color: var(--ink-3); margin-top: 2px; }
 .card .p { margin-top: 8px; font-size: 15.5px; font-weight: 600; display: flex; gap: 8px; align-items: baseline; }
 .card .p s { font-size: 12.5px; font-weight: 400; color: var(--ink-3); }
+.card .carte-desc {
+  font-family: var(--f-text); font-weight: 300; font-size: 14.5px; line-height: 1.55;
+  color: var(--ink-2); margin-top: 8px;
+}
+.variante-note {
+  margin-top: 10px; font-family: var(--f-text); font-weight: 300;
+  font-size: 15px; line-height: 1.55; color: var(--ink-2);
+}
 
 /* ---------------- Comparatif durée ---------------- */
 
@@ -457,7 +465,7 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
 
     <nav class="mainnav" id="nav">
       <a href="#/" data-r="/">Accueil</a>
-      <a href="#/lampe" data-r="/lampe">La lampe</a>
+      <a href="#/p/lampe" data-r="/p/lampe">La lampe</a>
       <a href="#/boutique" data-r="/boutique">Boutique</a>
       <a href="#/aide" data-r="/aide">Aide</a>
     </nav>
@@ -469,7 +477,7 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
   <div class="wrap">
     <nav class="mobilenav" id="mnav">
       <a href="#/" data-r="/">Accueil</a>
-      <a href="#/lampe" data-r="/lampe">La lampe</a>
+      <a href="#/p/lampe" data-r="/p/lampe">La lampe</a>
       <a href="#/boutique" data-r="/boutique">Boutique</a>
       <a href="#/aide" data-r="/aide">Aide</a>
     </nav>
@@ -497,7 +505,7 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
           <span class="off">−36 %</span>
         </div>
         <div class="hero-actions">
-          <a class="btn btn-solid" href="#/lampe">Voir la lampe</a>
+          <a class="btn btn-solid" href="#/p/lampe">Voir la lampe</a>
           <a class="btn btn-line" href="#/boutique">Toute la boutique</a>
         </div>
       </div>
@@ -603,107 +611,8 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
 </div>
 
 <!-- ==================== FICHE PRODUIT ==================== -->
-<div class="view" id="v-/lampe">
-  <div class="wrap">
-    <p class="crumbs"><a href="#/">Accueil</a> / <a href="#/boutique">Boutique</a> / Lampe chauffe-bougie</p>
-
-    <div class="pdp">
-      <div class="gallery">
-        <div class="shot" id="pdpshot"></div>
-        <div class="thumbs" id="pdpthumbs"></div>
-        <div class="shot" style="aspect-ratio:16/10;">
-          <img class="img-detail" src="visuels/photo/detail.jpg" alt="Gros plan du bain de cire fondue éclairé par l'ampoule" loading="lazy" decoding="async">
-        </div>
-        <div class="galerie2">
-          <div class="shot"><img id="img-macro" src="visuels/photo/macro-abatjour.jpg" alt="L'abat-jour laiton et l'ampoule halogène de 35 W, vus de près" loading="lazy" decoding="async"></div>
-          <div class="shot" style="background:#FAF9F6;"><img id="img-cotes" src="visuels/photo/cotes.jpg" alt="Cotes de la lampe : hauteur réglable de 26 à 34 cm, socle de 16 cm de diamètre" loading="lazy" decoding="async" style="object-fit:contain;"></div>
-        </div>
-      </div>
-
-      <div>
-        <span class="label">CERA</span>
-        <h1 style="margin-top:10px;">Lampe chauffe-bougie</h1>
-        <div class="pricerow">
-          <span class="now num" id="pdpprice">44,90 €</span>
-          <span class="was num" id="pdpwas">69,90 €</span>
-          <span class="off" id="pdpoff">−36 %</span>
-        </div>
-
-        <p class="prose">
-          Hauteur réglable de 26 à 34 cm, variateur d'intensité et minuteur.
-          Deux ampoules halogènes GU10 fournies, dont une de rechange.
-          Compatible avec la plupart des bougies en pot jusqu'à 10 cm de diamètre.
-        </p>
-
-        <div style="margin-top:22px;">
-          <span class="label">Coloris — <span id="colorname">Noir mat</span></span>
-          <div class="swatches" id="swatches"></div>
-        </div>
-
-        <div class="buyrow">
-          <div class="stepper">
-            <button type="button" id="qminus" aria-label="Diminuer la quantité">−</button>
-            <span class="qty num" id="qval">1</span>
-            <button type="button" id="qplus" aria-label="Augmenter la quantité">+</button>
-          </div>
-          <button class="btn btn-solid" type="button" id="addbtn">Ajouter au panier</button>
-        </div>
-
-        <p class="ship-note">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5M12 8h.01"/></svg>
-          Expédition sous 24 à 48 h, puis 8 à 15 jours ouvrés en France métropolitaine,
-          avec suivi. Nous préférons annoncer un délai honnête qu'une promesse intenable.
-        </p>
-
-        <div class="acc">
-          <details open>
-            <summary>Description</summary>
-            <div class="body">
-              La lampe fait fondre la cire par le dessus grâce à une ampoule halogène de 35 W.
-              Il n'y a pas de flamme, donc pas de suie sur le verre et pas de mèche consommée.
-              Le parfum se libère plus lentement et plus doucement qu'à la flamme — et comme
-              la cire n'est pas brûlée, elle se refond autant de fois que nécessaire.
-            </div>
-          </details>
-          <details>
-            <summary>Caractéristiques</summary>
-            <div class="body">
-              <table class="spectable">
-                <tr><th>Ampoule</th><td>GU10 halogène, 35 W, 2700 K</td></tr>
-                <tr><th>Alimentation</th><td>220–240 V, câble 1,5 m, prise type E</td></tr>
-                <tr><th>Hauteur</th><td>Réglable de 26 à 34 cm</td></tr>
-                <tr><th>Minuteur</th><td>2 h / 4 h / 6 h</td></tr>
-                <tr><th>Bougies compatibles</th><td>Pot jusqu'à 10 cm de diamètre</td></tr>
-                <tr><th>Fourni</th><td>2 ampoules, notice en français</td></tr>
-              </table>
-            </div>
-          </details>
-          <details>
-            <summary>Livraison</summary>
-            <div class="body">
-              <ul>
-                <li>Préparation sous 24 à 48 h ouvrées.</li>
-                <li>Acheminement 8 à 15 jours ouvrés, France métropolitaine.</li>
-                <li>Numéro de suivi transmis dès l'expédition.</li>
-                <li>Frais de port offerts, sans minimum d'achat.</li>
-              </ul>
-            </div>
-          </details>
-          <details>
-            <summary>Retours et garantie</summary>
-            <div class="body">
-              <ul>
-                <li>Droit de rétractation légal : 14 jours à compter de la réception.</li>
-                <li>Garantie commerciale : 30 jours, remboursement intégral.</li>
-                <li>Garantie légale de conformité : 2 ans.</li>
-                <li>Produit défectueux : une photo suffit, nous remboursons ou remplaçons.</li>
-              </ul>
-            </div>
-          </details>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="view" id="v-/produit">
+  <div class="wrap" id="pdp"></div>
 </div>
 
 <!-- ==================== BOUTIQUE ==================== -->
@@ -795,10 +704,10 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
       <div class="footcol">
         <h4>Boutique</h4>
         <ul>
-          <li><a href="#/lampe">La lampe</a></li>
-          <li><a href="#/boutique">Bougies</a></li>
-          <li><a href="#/boutique">Ampoules</a></li>
-          <li><a href="#/boutique">Coffret cadeau</a></li>
+          <li><a href="#/p/lampe">La lampe</a></li>
+          <li><a href="#/p/bougie">Bougies</a></li>
+          <li><a href="#/p/ampoule">Ampoules</a></li>
+          <li><a href="#/p/coffret">Coffret cadeau</a></li>
         </ul>
       </div>
       <div class="footcol">
@@ -888,24 +797,106 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
   function box()    { return pic("coffret", "Coffret cadeau CERA fermé par un ruban"); }
   function bulbs()  { return pic("ampoules", "Deux ampoules halogènes GU10"); }
 
-  /* ---------- Catalogue ---------- */
+  /* ---------- Catalogue ----------
+     Chaque produit porte ses propres images, variantes, description et
+     caractéristiques. La fiche est générique : ajouter un produit ici suffit
+     à lui créer sa page. */
 
-  var COLORS = [
-    { id: "noir",   name: "Noir mat",       dot: "#2E3130", body: "var(--lamp-body)", price: 44.90, was: 69.90 },
-    { id: "ivoire", name: "Blanc ivoire",   dot: "#EDE8DD", body: "#B9B3A6",          price: 44.90, was: 69.90 },
-    { id: "laiton", name: "Laiton brossé",  dot: "#B08D4F", body: "#B08D4F",          price: 49.90, was: 74.90 }
-  ];
+  var CATALOGUE = {
 
-  var PRODUCTS = {
-    lampe:   { name: "Lampe chauffe-bougie", sub: "3 coloris · variateur · minuteur", price: 44.90, was: 69.90, art: function () { return lamp("noir"); }, href: "#/lampe" },
-    coffret: { name: "Coffret CERA",        sub: "Lampe + 2 bougies parfumées",      price: 59.90, was: 84.70, art: box,    href: "#/boutique" },
-    bougie:  { name: "Bougie 180 g",         sub: "Cire de soja · 3 parfums",         price: 19.90, was: null,  art: candle, href: "#/boutique" },
-    ampoule: { name: "Ampoules GU10",        sub: "Lot de 2 · 35 W · 2700 K",         price: 9.90,  was: null,  art: bulbs,  href: "#/boutique" }
+    lampe: {
+      nom: "Lampe chauffe-bougie",
+      sous: "3 coloris · variateur · minuteur",
+      carte: "Une ampoule halogène fait fondre la cire par le dessus. Pas de flamme, pas de suie, et la bougie dure environ deux fois plus longtemps.",
+      resume: "Hauteur réglable de 26 à 34 cm, variateur d'intensité et minuteur. Deux ampoules halogènes GU10 fournies, dont une de rechange. Compatible avec la plupart des bougies en pot jusqu'à 10 cm de diamètre.",
+      description: "<p>La lampe fait fondre la cire par le dessus grâce à une ampoule halogène de 35 W. Il n'y a pas de flamme, donc pas de suie sur le verre et pas de mèche consommée.</p><p>Le parfum se libère plus lentement et plus doucement qu'à la flamme — et comme la cire n'est pas brûlée, elle se refond autant de fois que nécessaire. C'est la même bougie, deux fois plus de soirées.</p>",
+      images: ["detail", "macro-abatjour", "cotes"],
+      etiquetteVariante: "Coloris",
+      variantes: [
+        { id: "noir",   nom: "Noir mat",      pastille: "#2E3130", prix: 44.90, avant: 69.90, image: "lampe-noir" },
+        { id: "ivoire", nom: "Blanc ivoire",  pastille: "#EDE8DD", prix: 44.90, avant: 69.90, image: "lampe-ivoire" },
+        { id: "laiton", nom: "Laiton brossé", pastille: "#B08D4F", prix: 49.90, avant: 74.90, image: "lampe-laiton" }
+      ],
+      specs: [
+        ["Ampoule", "GU10 halogène, 35 W, 2700 K"],
+        ["Alimentation", "220–240 V, câble 1,5 m, prise type E"],
+        ["Hauteur", "Réglable de 26 à 34 cm"],
+        ["Socle", "Lesté, Ø 16 cm"],
+        ["Minuteur", "2 h / 4 h / 6 h"],
+        ["Bougies compatibles", "Pot jusqu'à 10 cm de diamètre"],
+        ["Fourni", "2 ampoules, notice en français"]
+      ]
+    },
+
+    coffret: {
+      nom: "Coffret CERA",
+      sous: "Lampe + 2 bougies parfumées",
+      carte: "Tout ce qu'il faut pour allumer le soir même : la lampe, deux bougies et une ampoule de rechange, dans un écrin prêt à offrir.",
+      resume: "La lampe, deux bougies parfumées de 180 g et une ampoule de rechange, réunies dans un écrin cartonné. Acheté séparément, l'ensemble revient à 84,70 €.",
+      description: "<p>C'est la façon la plus simple d'offrir la lampe : la personne qui la reçoit peut l'allumer le soir même, sans avoir à acheter quoi que ce soit d'autre.</p><p>Les deux bougies fournies sont au format qui s'adapte à la lampe — pot de 8 cm, cire de soja. Les parfums sont <em>Bois de cèdre</em> et <em>Vanille &amp; ambre</em>.</p>",
+      images: ["duo", "detail"],
+      etiquetteVariante: "Coloris de la lampe",
+      variantes: [
+        { id: "noir",   nom: "Noir mat",     pastille: "#2E3130", prix: 59.90, avant: 84.70, image: "coffret" },
+        { id: "ivoire", nom: "Blanc ivoire", pastille: "#EDE8DD", prix: 59.90, avant: 84.70, image: "coffret" }
+      ],
+      specs: [
+        ["Contenu", "1 lampe, 2 bougies 180 g, 2 ampoules GU10"],
+        ["Parfums fournis", "Bois de cèdre · Vanille &amp; ambre"],
+        ["Emballage", "Écrin cartonné, prêt à offrir"],
+        ["Valeur à l'unité", "84,70 €"],
+        ["Poids", "Environ 1,15 kg"]
+      ]
+    },
+
+    bougie: {
+      nom: "Bougie parfumée 180 g",
+      sous: "Cire de soja · 3 parfums",
+      carte: "Pensée pour être fondue, pas brûlée. Pot de verre de 8 cm, le format qui s'adapte à la lampe.",
+      resume: "Cire de soja, mèche coton sans plomb, pot en verre épais de 8 cm de diamètre — le format qui s'adapte à la lampe CERA. Elle s'utilise aussi de façon classique, à la flamme.",
+      description: "<p>Une bougie pensée pour être <strong>fondue, pas brûlée</strong>. Sur la lampe, la cire fond en surface, refroidit entre deux utilisations et se refond autant de fois que nécessaire.</p><p>Comptez environ 40 heures en combustion classique, et <strong>jusqu'à 80 heures sur la lampe</strong>.</p>",
+      images: ["detail"],
+      etiquetteVariante: "Parfum",
+      variantes: [
+        { id: "cedre",   nom: "Bois de cèdre",   pastille: "#2C4739", prix: 19.90, avant: null, image: "bougie-cedre",   note: "Boisé, sec, discret. Pour un salon ou un bureau." },
+        { id: "vanille", nom: "Vanille & ambre", pastille: "#7A5423", prix: 19.90, avant: null, image: "bougie-vanille", note: "Chaud et enveloppant. Pour une chambre." },
+        { id: "figue",   nom: "Figue & cassis",  pastille: "#5B2B3E", prix: 19.90, avant: null, image: "bougie-figue",   note: "Fruité et vert, plus frais que les deux autres." }
+      ],
+      specs: [
+        ["Cire", "Soja, 180 g"],
+        ["Mèche", "Coton sans plomb"],
+        ["Diamètre du pot", "8 cm — compatible lampe"],
+        ["Durée à la flamme", "Environ 40 h"],
+        ["Durée sur la lampe", "Jusqu'à 80 h"]
+      ]
+    },
+
+    ampoule: {
+      nom: "Ampoules GU10",
+      sous: "Lot de 2 · 35 W · 2700 K",
+      carte: "De quoi tenir presque quatre ans à trois heures par soir. Mieux vaut en avoir d'avance.",
+      resume: "Les ampoules halogènes de rechange pour votre lampe. Lot de 2. Une ampoule tient environ 2 000 heures — à raison de 3 h par soir, presque deux ans.",
+      description: "<p>Compatible avec la lampe CERA et la plupart des chauffe-bougies à ampoule GU10 du marché.</p><p>Mieux vaut en avoir d'avance que de se retrouver sans, le soir où on en a envie.</p>",
+      images: [],
+      etiquetteVariante: null,
+      variantes: [
+        { id: "lot2", nom: "Lot de 2", pastille: "#C9B58C", prix: 9.90, avant: null, image: "ampoules" }
+      ],
+      specs: [
+        ["Culot", "GU10"],
+        ["Puissance", "35 W"],
+        ["Température de couleur", "2 700 K (blanc chaud)"],
+        ["Tension", "220–240 V"],
+        ["Variateur", "Compatible"],
+        ["Durée de vie", "Environ 2 000 h"]
+      ]
+    }
   };
 
-  var ORDER = ["lampe", "coffret", "bougie", "ampoule"];
+  var ORDRE = ["lampe", "coffret", "bougie", "ampoule"];
 
   function eur(n) { return n.toFixed(2).replace(".", ",") + " €"; }
+  function lienProduit(cle) { return "#/p/" + cle; }
 
   /* ---------- État ---------- */
 
@@ -926,44 +917,119 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
 
   /* ---------- Grilles ---------- */
 
-  function cardHtml(key) {
-    var p = PRODUCTS[key];
-    return '<a class="card" href="' + p.href + '">'
-      + '<div class="pic">' + p.art() + '</div>'
-      + '<h3>' + p.name + '</h3>'
-      + '<p class="sub">' + p.sub + '</p>'
-      + '<p class="p num">' + eur(p.price) + (p.was ? ' <s>' + eur(p.was) + '</s>' : '') + '</p>'
+  function carteHtml(cle) {
+    var p = CATALOGUE[cle], v = p.variantes[0];
+    return '<a class="card" href="' + lienProduit(cle) + '">'
+      + '<div class="pic">' + pic(v.image, p.nom) + '</div>'
+      + '<h3>' + p.nom + '</h3>'
+      + '<p class="sub">' + p.sous + '</p>'
+      + '<p class="carte-desc">' + p.carte + '</p>'
+      + '<p class="p num">' + eur(v.prix) + (v.avant ? ' <s>' + eur(v.avant) + '</s>' : '') + '</p>'
       + '</a>';
   }
 
   function paintGrids() {
-    var html = ORDER.map(cardHtml).join("");
+    var html = ORDRE.map(carteHtml).join("");
     document.getElementById("homegrid").innerHTML = html;
     document.getElementById("shopgrid").innerHTML = html;
     document.getElementById("heroshot").innerHTML = lamp("noir");
   }
 
-  /* ---------- Fiche produit ---------- */
+  /* ---------- Fiche produit, générique ---------- */
+
+  var produitCourant = "lampe";
 
   function paintPdp() {
-    var c = COLORS[chosen];
-    document.getElementById("pdpshot").innerHTML = lamp(c.id);
-    document.getElementById("colorname").textContent = c.name;
-    document.getElementById("pdpprice").textContent = eur(c.price);
-    document.getElementById("pdpwas").textContent = eur(c.was);
-    document.getElementById("pdpoff").textContent =
-      "−" + Math.round((1 - c.price / c.was) * 100) + " %";
-    document.getElementById("qval").textContent = qty;
+    var cle = produitCourant, p = CATALOGUE[cle];
+    if (!p) return;
+    if (chosen >= p.variantes.length) chosen = 0;
+    var v = p.variantes[chosen];
 
-    document.getElementById("swatches").innerHTML = COLORS.map(function (col, i) {
-      return '<button class="swatch' + (i === chosen ? ' on' : '') + '" type="button" data-i="' + i + '">'
-        + '<i style="background:' + col.dot + '"></i>' + col.name + '</button>';
+    var vignettes = p.variantes.map(function (va, i) {
+      return '<button class="thumb' + (i === chosen ? ' on' : '') + '" type="button" data-var="' + i + '" '
+        + 'aria-label="Voir : ' + va.nom + '">' + pic(va.image, va.nom) + '</button>';
     }).join("");
 
-    document.getElementById("pdpthumbs").innerHTML = COLORS.map(function (col, i) {
-      return '<button class="thumb' + (i === chosen ? ' on' : '') + '" type="button" data-i="' + i + '" '
-        + 'aria-label="Voir le coloris ' + col.name + '">' + lamp(col.id) + '</button>';
+    var secondaires = p.images.map(function (k) {
+      return '<div class="shot"' + (k === "cotes" ? ' style="background:#FAF9F6;"' : '') + '>'
+        + '<img src="' + (VISUELS[k] || "") + '" alt="' + p.nom + '" loading="lazy" decoding="async"'
+        + (k === "cotes" ? ' style="object-fit:contain;"' : '') + '></div>';
     }).join("");
+
+    var choix = "";
+    if (p.etiquetteVariante) {
+      choix = '<div style="margin-top:22px;">'
+        + '<span class="label">' + p.etiquetteVariante + ' — ' + v.nom + '</span>'
+        + '<div class="swatches">' + p.variantes.map(function (va, i) {
+            return '<button class="swatch' + (i === chosen ? ' on' : '') + '" type="button" data-var="' + i + '">'
+              + '<i style="background:' + va.pastille + '"></i>' + va.nom + '</button>';
+          }).join("") + '</div>'
+        + (v.note ? '<p class="variante-note">' + v.note + '</p>' : '')
+        + '</div>';
+    }
+
+    var remise = v.avant
+      ? '<span class="was num">' + eur(v.avant) + '</span>'
+        + '<span class="off">−' + Math.round((1 - v.prix / v.avant) * 100) + ' %</span>'
+      : '';
+
+    document.getElementById("pdp").innerHTML =
+      '<p class="crumbs"><a href="#/">Accueil</a> / <a href="#/boutique">Boutique</a> / ' + p.nom + '</p>'
+      + '<div class="pdp">'
+      +   '<div class="gallery">'
+      +     '<div class="shot">' + pic(v.image, p.nom + ' — ' + v.nom) + '</div>'
+      +     (p.variantes.length > 1 ? '<div class="thumbs">' + vignettes + '</div>' : '')
+      +     (secondaires ? '<div class="galerie2">' + secondaires + '</div>' : '')
+      +   '</div>'
+      +   '<div>'
+      +     '<span class="label">CERA</span>'
+      +     '<h1 style="margin-top:10px;">' + p.nom + '</h1>'
+      +     '<div class="pricerow"><span class="now num">' + eur(v.prix) + '</span>' + remise + '</div>'
+      +     '<p class="prose">' + p.resume + '</p>'
+      +     choix
+      +     '<div class="buyrow">'
+      +       '<div class="stepper">'
+      +         '<button type="button" data-q="-" aria-label="Diminuer la quantité">−</button>'
+      +         '<span class="qty num">' + qty + '</span>'
+      +         '<button type="button" data-q="+" aria-label="Augmenter la quantité">+</button>'
+      +       '</div>'
+      +       '<button class="btn btn-solid" type="button" data-ajouter="1">Ajouter au panier</button>'
+      +     '</div>'
+      +     '<p class="ship-note">'
+      +       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5M12 8h.01"/></svg>'
+      +       'Expédition sous 24 à 48 h, puis 8 à 15 jours ouvrés en France métropolitaine, avec suivi. '
+      +       'Nous préférons annoncer un délai honnête qu\'une promesse intenable.'
+      +     '</p>'
+      +     '<div class="acc">'
+      +       '<details open><summary>Description</summary><div class="body">' + p.description + '</div></details>'
+      +       '<details><summary>Caractéristiques</summary><div class="body"><table class="spectable">'
+      +         p.specs.map(function (l) { return '<tr><th>' + l[0] + '</th><td>' + l[1] + '</td></tr>'; }).join("")
+      +       '</table></div></details>'
+      +       '<details><summary>Livraison</summary><div class="body"><ul>'
+      +         '<li>Préparation sous 24 à 48 h ouvrées.</li>'
+      +         '<li>Acheminement 8 à 15 jours ouvrés, France métropolitaine.</li>'
+      +         '<li>Numéro de suivi transmis dès l\'expédition.</li>'
+      +         '<li>Frais de port offerts, sans minimum d\'achat.</li>'
+      +       '</ul></div></details>'
+      +       '<details><summary>Retours et garantie</summary><div class="body"><ul>'
+      +         '<li>Droit de rétractation légal : 14 jours à compter de la réception.</li>'
+      +         '<li>Garantie commerciale : 30 jours, remboursement intégral.</li>'
+      +         '<li>Garantie légale de conformité : 2 ans.</li>'
+      +         '<li>Produit défectueux : une photo suffit, nous remboursons ou remplaçons.</li>'
+      +       '</ul></div></details>'
+      +     '</div>'
+      +   '</div>'
+      + '</div>'
+      + autresProduits(cle);
+  }
+
+  function autresProduits(cleCourante) {
+    var autres = ORDRE.filter(function (k) { return k !== cleCourante; });
+    return '<section style="padding-block:clamp(40px,6vw,72px);">'
+      + '<div class="sec-head"><span class="label">À associer</span>'
+      + '<h2 style="margin-top:12px;">Le reste de la collection.</h2></div>'
+      + '<div class="grid4">' + autres.map(carteHtml).join("") + '</div>'
+      + '</section>';
   }
 
   /* ---------- Panier ---------- */
@@ -971,29 +1037,28 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
   function count() { return cart.reduce(function (n, l) { return n + l.qty; }, 0); }
   function subtotal() { return cart.reduce(function (s, l) { return s + l.price * l.qty; }, 0); }
 
-  function artFor(line) {
-    if (line.key === "lampe") {
-      var col = COLORS.filter(function (c) { return c.id === line.variant; })[0] || COLORS[0];
-      return lamp(col.id);
-    }
-    return PRODUCTS[line.key].art();
+  function varianteDe(cle, idVariante) {
+    var p = CATALOGUE[cle];
+    if (!p) return null;
+    return p.variantes.filter(function (v) { return v.id === idVariante; })[0] || p.variantes[0];
   }
 
-  function add(key, variantId, n) {
-    var p = PRODUCTS[key];
-    var price = p.price;
-    var label = "";
-    if (key === "lampe") {
-      var col = COLORS.filter(function (c) { return c.id === variantId; })[0] || COLORS[0];
-      price = col.price;
-      label = col.name;
-    }
-    var found = cart.filter(function (l) { return l.key === key && l.variant === variantId; })[0];
-    if (found) { found.qty += n; }
-    else { cart.push({ key: key, variant: variantId, label: label, price: price, qty: n }); }
+  function artFor(line) {
+    var v = varianteDe(line.key, line.variant);
+    return v ? pic(v.image, line.label || line.key) : "";
+  }
+
+  function add(cle, idVariante, n) {
+    var p = CATALOGUE[cle], v = varianteDe(cle, idVariante);
+    if (!p || !v) return;
+    // une seule variante : l'étiquette n'apporte rien au panier
+    var etiquette = p.variantes.length > 1 ? v.nom : "";
+    var trouve = cart.filter(function (l) { return l.key === cle && l.variant === v.id; })[0];
+    if (trouve) { trouve.qty += n; }
+    else { cart.push({ key: cle, variant: v.id, label: etiquette, price: v.prix, qty: n }); }
     save();
     paintCart();
-    toast(p.name + " ajoutée au panier");
+    toast(p.nom + " ajouté au panier");
   }
 
   function paintCart() {
@@ -1011,11 +1076,11 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
     }
 
     var lines = cart.map(function (l, i) {
-      var p = PRODUCTS[l.key];
+      var p = CATALOGUE[l.key];
       return '<div class="line">'
         + '<div class="pic">' + artFor(l) + '</div>'
         + '<div>'
-        +   '<h4>' + p.name + '</h4>'
+        +   '<h4>' + p.nom + '</h4>'
         +   '<p class="meta">' + (l.label ? l.label + ' · ' : '') + eur(l.price) + ' l\'unité</p>'
         +   '<div class="stepper" style="margin-top:9px;">'
         +     '<button type="button" data-act="dec" data-i="' + i + '" aria-label="Diminuer">−</button>'
@@ -1060,14 +1125,27 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
 
   /* ---------- Navigation ---------- */
 
-  var ROUTES = ["/", "/lampe", "/boutique", "/aide", "/panier"];
+  var VUES = ["/", "/produit", "/boutique", "/aide", "/panier"];
 
   function route() {
     var r = (location.hash || "#/").slice(1);
-    if (ROUTES.indexOf(r) === -1) r = "/";
-    ROUTES.forEach(function (x) {
+
+    // ancien lien de la fiche lampe, conservé pour les favoris
+    if (r === "/lampe") { location.replace("#/p/lampe"); return; }
+
+    var m = r.match(/^\/p\/([a-z]+)$/);
+    var vue = r;
+    if (m && CATALOGUE[m[1]]) {
+      if (m[1] !== produitCourant) { produitCourant = m[1]; chosen = 0; qty = 1; }
+      paintPdp();
+      vue = "/produit";
+    } else if (VUES.indexOf(r) === -1 || r === "/produit") {
+      vue = "/";
+    }
+
+    VUES.forEach(function (x) {
       var el = document.getElementById("v-" + x);
-      if (el) el.classList.toggle("on", x === r);
+      if (el) el.classList.toggle("on", x === vue);
     });
     Array.prototype.forEach.call(document.querySelectorAll("[data-r]"), function (a) {
       a.classList.toggle("on", a.getAttribute("data-r") === r);
@@ -1079,28 +1157,33 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
 
   document.getElementById("cartbtn").addEventListener("click", function () { location.hash = "#/panier"; });
 
-  document.getElementById("swatches").addEventListener("click", function (e) {
-    var b = e.target.closest("[data-i]"); if (!b) return;
-    chosen = parseInt(b.getAttribute("data-i"), 10); paintPdp();
-  });
-  document.getElementById("pdpthumbs").addEventListener("click", function (e) {
-    var b = e.target.closest("[data-i]"); if (!b) return;
-    chosen = parseInt(b.getAttribute("data-i"), 10); paintPdp();
-  });
-
-  document.getElementById("qminus").addEventListener("click", function () {
-    if (qty > 1) { qty--; document.getElementById("qval").textContent = qty; }
-  });
-  document.getElementById("qplus").addEventListener("click", function () {
-    if (qty < 20) { qty++; document.getElementById("qval").textContent = qty; }
-  });
-  document.getElementById("addbtn").addEventListener("click", function () {
-    add("lampe", COLORS[chosen].id, qty);
-  });
-
   document.addEventListener("click", function (e) {
     var card = e.target.closest(".card"); // laisse le lien agir
     if (card) return;
+
+    // choix de variante
+    var va = e.target.closest("[data-var]");
+    if (va) {
+      chosen = parseInt(va.getAttribute("data-var"), 10);
+      paintPdp();
+      return;
+    }
+
+    // quantité sur la fiche
+    var q = e.target.closest("[data-q]");
+    if (q) {
+      if (q.getAttribute("data-q") === "+") { if (qty < 20) qty++; }
+      else if (qty > 1) { qty--; }
+      paintPdp();
+      return;
+    }
+
+    // ajout au panier
+    if (e.target.closest("[data-ajouter]")) {
+      var pr = CATALOGUE[produitCourant];
+      if (pr) add(produitCourant, pr.variantes[chosen].id, qty);
+      return;
+    }
 
     var b = e.target.closest("[data-act]");
     if (b) {
@@ -1136,7 +1219,6 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
 
   load();
   paintGrids();
-  paintPdp();
   paintCart();
   route();
 })();
