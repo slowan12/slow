@@ -3,6 +3,8 @@
   "presets": {
     "Default": {
       "logo_width": 110,
+      "logo": "shopify://shop_images/cera-logo.png",
+      "favicon": "shopify://shop_images/cera-favicon.png",
       "color_schemes": {
         "scheme-1": {
           "settings": {

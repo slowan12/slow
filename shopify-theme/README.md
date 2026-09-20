@@ -8,8 +8,24 @@ par défaut tant que tu ne l'actives pas. Zéro risque.
 
 | Fichier | Ce qu'il fait |
 |---|---|
-| `config/settings_data.json` | Palette CERA sur les 5 schémas de couleur, typographie, rayons, cartes, panier en tiroir |
+| `config/settings_data.json` | Palette CERA sur les 5 schémas de couleur, typographie, rayons, cartes, panier en tiroir, **logo et favicon** |
 | `templates/index.json` | La page d'accueil : 6 sections |
+
+### Le nom affiché
+
+Le nom au niveau du compte est toujours « Ma boutique », et **l'API Shopify ne permet pas de
+le changer** — la documentation est explicite sur la ressource `Shop` : *« it doesn't let you
+update any information. Only the merchant can update this information from inside the Shopify
+admin. »*
+
+Mais ce n'est pas ce nom que voient tes clients. Dawn affiche **le logo** à la place de
+`shop.name` dès qu'un logo est défini. Le logotype CERA est donc généré
+(`site/visuels/render-logo.mjs`), téléversé, et câblé dans les réglages du thème — avec le
+favicon assorti pour l'onglet du navigateur.
+
+Il reste un seul endroit où « Ma boutique » transparaît : le **titre de l'onglet** sur les
+pages autres que l'accueil, que Dawn construit avec `shop.name`, et les **e-mails de
+confirmation de commande**. D'où l'intérêt de faire quand même le renommage en deux clics.
 
 ### La page d'accueil
 
@@ -56,8 +72,7 @@ Pour revenir en arrière à tout moment : republie « Dawn ». Rien n'est perdu.
 
 | | Où |
 |---|---|
-| Nom de la boutique (« Ma boutique ») | Paramètres → Détails de la boutique |
-| Logo | Éditeur de thème → En-tête → Logo |
+| Nom du compte (titre d'onglet, e-mails) | Paramètres → Détails de la boutique |
 | Menus de navigation | Boutique en ligne → Navigation |
 | Retirer le mot de passe | Boutique en ligne → Préférences |
 | Fournisseur de paiement | Paramètres → Paiements |
