@@ -10,6 +10,15 @@ Ordre d'exécution. Ne lance pas de publicité tant que la section 1 n'est pas c
       Tension 2014/35/UE et CEM 2014/30/UE). Sans ce document, ne vends pas.
 - [ ] **Photos et vidéos maison.** Les visuels du fournisseur sont utilisés par 200 autres
       boutiques, et souvent sans droits cédés. Tourne les tiennes avec l'échantillon.
+- [ ] **Vérifier que les visuels actuels ressemblent à ce que le fournisseur expédie.**
+      Les images en ligne sont des rendus (`site/visuels/render-photo.mjs`), pas des
+      photographies, et ils représentent un modèle précis : **abat-jour cylindrique en
+      tissu, pot en verre ambré, socle rond avec molette de variateur**. Si la lampe reçue
+      a un abat-jour en métal, un pot incolore ou une autre commande, les images
+      annoncent autre chose que le produit : c'est une pratique commerciale trompeuse
+      (art. L121-2 du code de la consommation) et la première cause de retours. Dans ce
+      cas, deux options : changer de fournisseur pour un modèle conforme aux visuels, ou
+      refaire les visuels d'après l'échantillon.
 - [ ] **Mentions légales complètes** (voir `boutique/pages-legales/`), incluant le nom et
       l'adresse de la personne responsable UE au sens du règlement GPSR.
 - [ ] **Statut juridique créé** (micro-entreprise suffit pour démarrer) + compte bancaire dédié.
