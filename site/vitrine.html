@@ -525,7 +525,7 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
   </div>
 
   <section class="showcase">
-    <img src="visuels/photo/hero.jpg" alt="La lampe Lueur allumée sur une table, le soir, dans une pièce sombre" loading="lazy" decoding="async">
+    <img id="img-hero" src="visuels/photo/hero.jpg" alt="La lampe Lueur allumée sur une table, le soir, dans une pièce sombre" loading="lazy" decoding="async">
     <div class="over"><div class="over-in">
       <h2>Une lumière basse, et rien qui brûle.</h2>
       <p>35 W, 2700 K, un variateur. Assez pour faire fondre la cire, assez peu pour rester allumée toute la soirée.</p>
@@ -555,7 +555,7 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
   </section>
 
   <section class="showcase">
-    <img src="visuels/photo/detail.jpg" alt="Gros plan : l'ampoule éclaire la surface de la cire, qui fond par le dessus" loading="lazy" decoding="async">
+    <img class="img-detail" src="visuels/photo/detail.jpg" alt="Gros plan : l'ampoule éclaire la surface de la cire, qui fond par le dessus" loading="lazy" decoding="async">
     <div class="over"><div class="over-in">
       <h2>La chaleur vient du dessus.</h2>
       <p>La cire fond en surface, le parfum se libère, la mèche reste intacte. Rien ne se consume — c'est pour ça que le pot dure deux fois plus longtemps.</p>
@@ -610,7 +610,7 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
         <div class="shot" id="pdpshot"></div>
         <div class="thumbs" id="pdpthumbs"></div>
         <div class="shot" style="aspect-ratio:16/10;">
-          <img src="visuels/photo/detail.jpg" alt="Gros plan du bain de cire fondue éclairé par l'ampoule" loading="lazy" decoding="async">
+          <img class="img-detail" src="visuels/photo/detail.jpg" alt="Gros plan du bain de cire fondue éclairé par l'ampoule" loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -838,13 +838,37 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
   "use strict";
 
   /* ---------- Visuels ----------
-     Rendus produit générés par site/visuels/render-photo.mjs.
-     Ce ne sont pas des photographies : à remplacer dès réception de l'échantillon. */
+     UN SEUL ENDROIT À MODIFIER POUR CHANGER LES IMAGES.
 
-  var IMG = "visuels/photo/";
+     Chaque valeur est soit un chemin local (rendus générés par
+     site/visuels/render-photo.mjs), soit une URL absolue — par exemple une
+     image AliExpress (https://ae01.alicdn.com/...) ou l'URL d'un fichier
+     déjà téléversé sur Shopify (https://cdn.shopify.com/...).
 
-  function pic(file, alt) {
-    return '<img src="' + IMG + file + '.jpg" alt="' + alt + '" loading="lazy" decoding="async">';
+     Pour passer aux photos du fournisseur : remplace la valeur, rien d'autre.
+     Le site, les vignettes, le catalogue et le panier suivent automatiquement.
+
+     Deux réserves à connaître avant de publier des images fournisseur :
+     elles appartiennent au vendeur, et elles donnent la même fiche produit
+     que tous les autres revendeurs du même article. */
+
+  var VISUELS = {
+    "lampe-noir":      "visuels/photo/lampe-noir.jpg",
+    "lampe-ivoire":    "visuels/photo/lampe-ivoire.jpg",
+    "lampe-laiton":    "visuels/photo/lampe-laiton.jpg",
+    "detail":          "visuels/photo/detail.jpg",
+    "hero":            "visuels/photo/hero.jpg",
+    "duo":             "visuels/photo/duo.jpg",
+    "coffret":         "visuels/photo/coffret.jpg",
+    "bougie-cedre":    "visuels/photo/bougie-cedre.jpg",
+    "bougie-vanille":  "visuels/photo/bougie-vanille.jpg",
+    "bougie-figue":    "visuels/photo/bougie-figue.jpg",
+    "ampoules":        "visuels/photo/ampoules.jpg"
+  };
+
+  function pic(cle, alt) {
+    var src = VISUELS[cle] || "";
+    return '<img src="' + src + '" alt="' + alt + '" loading="lazy" decoding="async">';
   }
 
   function lamp(colorId) {
@@ -1088,6 +1112,15 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
   window.addEventListener("hashchange", route);
 
   /* ---------- Démarrage ---------- */
+
+  // les images posées directement dans le HTML suivent la même table
+  (function appliquerVisuels() {
+    var h = document.getElementById("img-hero");
+    if (h && VISUELS.hero) h.src = VISUELS.hero;
+    Array.prototype.forEach.call(document.querySelectorAll(".img-detail"), function (el) {
+      if (VISUELS.detail) el.src = VISUELS.detail;
+    });
+  })();
 
   load();
   paintGrids();

@@ -56,6 +56,7 @@ boutique/pages-legales/         Modèles : mentions légales, livraison, rétrac
 ops/checklist-lancement.md      Ordre d'exécution avant la première pub
 ops/conformite-ce-gpsr.md       CE, GPSR, DEEE — obligatoire sur un produit électrique
 ops/dsers-connexion.md          Installation DSers, mapping, grille de sourcing, seuils
+site/visuels/photos-fournisseur.md  Basculer le site et Shopify sur les photos AliExpress
 shopify-import/produits.csv     Sauvegarde / réimport du catalogue
 ```
 
@@ -112,3 +113,9 @@ de marque, un miel reserve a la lumiere de l'ampoule. Typographie Schibsted Grot
 Les visuels sont generes par `site/visuels/render-photo.mjs` (Chromium headless) et
 stockes dans `site/visuels/photo/`. Ce sont des rendus, pas des photographies — voir
 `site/visuels/README.md`. Le paiement n'est pas connecte.
+
+Toutes les sources d'images sont regroupees dans une table `VISUELS` unique, en tete du
+script de `vitrine.html`. Chaque valeur accepte un chemin local ou une URL absolue, ce qui
+permet de basculer sur les photos du fournisseur sans toucher au reste :
+`node site/visuels/appliquer-urls.mjs urls.json`. Procedure complete dans
+`site/visuels/photos-fournisseur.md`.
