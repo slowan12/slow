@@ -5,10 +5,7 @@
       "blocks": {
         "titre": {
           "type": "heading",
-          "settings": {
-            "heading": "Faire fondre, pas brûler.",
-            "heading_size": "h0"
-          }
+          "settings": { "heading": "Faire fondre, pas brûler.", "heading_size": "h0" }
         },
         "texte": {
           "type": "text",
@@ -29,11 +26,7 @@
           }
         }
       },
-      "block_order": [
-        "titre",
-        "texte",
-        "boutons"
-      ],
+      "block_order": ["titre", "texte", "boutons"],
       "settings": {
         "image": "shopify://shop_images/cera-hero.jpg",
         "image_overlay_opacity": 20,
@@ -48,36 +41,25 @@
         "show_text_below": false
       }
     },
-    "pourquoi": {
+    "manifeste": {
       "type": "rich-text",
       "blocks": {
         "surtitre": {
           "type": "caption",
-          "settings": {
-            "caption": "Pourquoi",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
-          }
+          "settings": { "caption": "La maison", "text_style": "caption-with-letter-spacing", "text_size": "medium" }
         },
         "titre": {
           "type": "heading",
-          "settings": {
-            "heading": "Ce que la flamme coûte à votre bougie.",
-            "heading_size": "h1"
-          }
+          "settings": { "heading": "Une seule idée, bien faite.", "heading_size": "h1" }
         },
         "texte": {
           "type": "text",
           "settings": {
-            "text": "<p>Brûler, c'est consommer la matière. La faire fondre, non : la cire refroidit, se re-solidifie, et repart au cycle suivant. Sans mèche allumée, il n'y a ni suie sur le verre, ni flamme à surveiller.</p>"
+            "text": "<p>Nous ne vendons pas un catalogue. Nous vendons une lampe qui fait fondre la cire par le dessus, les bougies au format qui lui va, et de quoi la garder allumée. Quatre références, et rien d'autre.</p><p>La flamme consume la cire. La chaleur, non : elle la fait fondre, le parfum se libère, et tout se re-solidifie en refroidissant. Le même pot tient à peu près deux fois plus longtemps.</p>"
           }
         }
       },
-      "block_order": [
-        "surtitre",
-        "titre",
-        "texte"
-      ],
+      "block_order": ["surtitre", "titre", "texte"],
       "settings": {
         "desktop_content_position": "left",
         "content_alignment": "left",
@@ -112,11 +94,7 @@
           }
         }
       },
-      "block_order": [
-        "c1",
-        "c2",
-        "c3"
-      ],
+      "block_order": ["c1", "c2", "c3"],
       "settings": {
         "title": "",
         "heading_size": "h2",
@@ -139,10 +117,7 @@
       "blocks": {
         "titre": {
           "type": "heading",
-          "settings": {
-            "heading": "La chaleur vient du dessus.",
-            "heading_size": "h1"
-          }
+          "settings": { "heading": "La chaleur vient du dessus.", "heading_size": "h1" }
         },
         "texte": {
           "type": "text",
@@ -152,10 +127,7 @@
           }
         }
       },
-      "block_order": [
-        "titre",
-        "texte"
-      ],
+      "block_order": ["titre", "texte"],
       "settings": {
         "image": "shopify://shop_images/cera-detail.jpg",
         "image_overlay_opacity": 10,
@@ -198,6 +170,95 @@
         "padding_bottom": 56
       }
     },
+    "recharges": {
+      "type": "rich-text",
+      "blocks": {
+        "surtitre": {
+          "type": "caption",
+          "settings": { "caption": "Les recharges", "text_style": "caption-with-letter-spacing", "text_size": "medium" }
+        },
+        "titre": {
+          "type": "heading",
+          "settings": { "heading": "La bougie compte autant que la lampe.", "heading_size": "h1" }
+        },
+        "texte": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Le diamètre du pot décide de tout. Trop large, la chaleur ne porte pas jusqu'aux bords et il reste un anneau de cire dure. Trop haut, la source s'éloigne de la surface. Nos bougies font 8 cm de diamètre — le format que cette lampe chauffe d'un bord à l'autre.</p><p>Elles s'allument aussi à la flamme, si l'envie vous prend.</p>"
+          }
+        },
+        "bouton": {
+          "type": "button",
+          "settings": {
+            "button_label": "Voir les bougies",
+            "button_link": "shopify://products/bougie-parfumee-cera-180g",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": ["surtitre", "titre", "texte", "bouton"],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "questions": {
+      "type": "collapsible-content",
+      "blocks": {
+        "q1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Est-ce que ça marche avec n'importe quelle bougie ?",
+            "row_content": "<p>Avec la plupart : un pot en verre jusqu'à 10 cm de diamètre. Au-delà, la cire fond au centre et reste dure sur les bords. La hauteur réglable, de 26 à 34 cm, sert justement à ajuster la distance selon le pot.</p>"
+          }
+        },
+        "q2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Est-ce que ça chauffe la pièce ?",
+            "row_content": "<p>Non. L'ampoule halogène de 35 W chauffe la surface de la cire, à quelques centimètres sous l'abat-jour. La lampe elle-même reste tiède, et le minuteur l'éteint au bout de 2, 4 ou 6 heures.</p>"
+          }
+        },
+        "q3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Combien de temps dure une bougie ?",
+            "row_content": "<p>Pour un pot de 180 g : environ 40 heures à la flamme, jusqu'à 80 heures sur la lampe. Comme la cire n'est pas brûlée, elle se refond autant de fois que nécessaire.</p>"
+          }
+        },
+        "q4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Et si la lampe ne me plaît pas ?",
+            "row_content": "<p>Vous avez 30 jours pour la renvoyer et être remboursé intégralement — en plus des 14 jours de rétractation que la loi vous garantit. Les frais de retour restent à votre charge.</p>"
+          }
+        },
+        "q5": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Quand est-ce que je la reçois ?",
+            "row_content": "<p>Expédition sous 24 à 48 h, puis 8 à 15 jours ouvrés avec suivi, en France métropolitaine. Nous préférons annoncer un délai honnête plutôt qu'une promesse intenable.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5"],
+      "settings": {
+        "caption": "Avant d'acheter",
+        "heading": "Ce qu'on nous demande le plus.",
+        "heading_size": "h2",
+        "heading_alignment": "left",
+        "layout": "none",
+        "open_first_collapsible_row": false,
+        "color_scheme": "scheme-1",
+        "container_color_scheme": "scheme-2",
+        "padding_top": 56,
+        "padding_bottom": 40
+      }
+    },
     "garanties": {
       "type": "multicolumn",
       "blocks": {
@@ -230,12 +291,7 @@
           }
         }
       },
-      "block_order": [
-        "g1",
-        "g2",
-        "g3",
-        "g4"
-      ],
+      "block_order": ["g1", "g2", "g3", "g4"],
       "settings": {
         "title": "",
         "heading_size": "h2",
@@ -256,10 +312,12 @@
   },
   "order": [
     "banniere_hero",
-    "pourquoi",
+    "manifeste",
     "arguments",
     "banniere_detail",
     "collection",
+    "recharges",
+    "questions",
     "garanties"
   ]
 }
