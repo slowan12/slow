@@ -4,27 +4,46 @@ Kit complet pour lancer une boutique mono-produit autour d'une **lampe chauffe-b
 produit retenu après comparaison de 6 candidats hivernaux.
 
 **Boutique concernée :** `954abe-d3.myshopify.com` — plan Basic, EUR, France.
-Les produits ont été créés **en brouillon** : rien n'est visible publiquement tant que tu ne
-les passes pas en « Actif ».
+La boutique est **montée et active**. Ce qu'il reste à faire tient dans quatre actions que je ne
+peux pas exécuter à ta place — elles demandent ton navigateur ou ta carte. Elles sont listées
+en bas de ce fichier.
 
-## Ce qui a été créé sur Shopify
+## Ce qui est en ligne sur Shopify
+
+**Les 4 produits sont actifs et publiés sur la Boutique en ligne**, visuels compris.
 
 | Élément | Prix | Statut |
 |---|---|---|
-| Lampe Chauffe-Bougie Lueur (3 coloris) | 44,90 € / 49,90 € | Brouillon |
-| Coffret Lueur (lampe + 2 bougies) | 59,90 € | Brouillon |
-| Bougie parfumée 180 g (3 parfums) | 19,90 € | Brouillon |
-| Ampoules GU10, lot de 2 | 9,90 € | Brouillon |
+| Lampe Chauffe-Bougie Lueur (3 coloris) | 44,90 € / 49,90 € | **Actif, 4 visuels** |
+| Coffret Lueur (lampe + 2 bougies) | 59,90 € | **Actif, 1 visuel** |
+| Bougie parfumée 180 g (3 parfums) | 19,90 € | **Actif, 3 visuels** |
+| Ampoules GU10, lot de 2 | 9,90 € | **Actif, 1 visuel** |
 | Collection « Collection Hiver — Lueur Maison » | — | Créée |
 | Collection « Idées cadeaux » (automatique, par tag) | — | Créée |
+| Promotion automatique « La 2ᵉ lampe à −15 % » | — | **Active** |
+| Page « Questions fréquentes » | — | **Publiée** |
+| Pages Livraison, Mentions légales, Rétractation | — | Créées, **non publiées** |
 
-**Il manque les images** : `create-product` n'accepte que des URL publiques, et utiliser les
-visuels du fournisseur pose un problème de droits comme de différenciation. Photographie ton
-échantillon — c'est de toute façon ce qui convertit le mieux.
+**Suivi de stock désactivé** sur toutes les variantes — c'est le réglage correct en
+dropshipping : aucune vente n'est bloquée par un compteur qui ne reflète rien. Les poids sont
+renseignés (700 g la lampe, 1 150 g le coffret, 330 g la bougie, 90 g les ampoules).
+
+### Deux choses délibérément laissées en attente
+
+**Les trois pages légales ne sont pas publiées.** Elles contiennent encore des champs entre
+crochets — `[Raison sociale]`, `[SIREN]`, `[contact@domaine.fr]`, le médiateur de la
+consommation. Une page de mentions légales en ligne avec « [Raison sociale] » écrit dessus est
+pire que pas de page du tout. Remplis les crochets, puis passe-les en visibles.
+
+**Les visuels sont des illustrations, pas des photographies.** Ils sont dessinés à la main dans
+la charte de la marque, ce qui règle le problème de droits posé par les images fournisseur et
+évite d'avoir la même fiche produit que tout le monde. Ils ne convertiront pas aussi bien qu'une
+vraie photo de ton échantillon : remplace-les dès réception.
 
 ## Le dépôt
 
 ```
+analyse/analyse-import-hiver-2026.md  Analyse de marché : droit de 3 €, filtre import, verdict
 analyse/analyse-produits.md     Comparaison des 6 produits, matrice de scoring, économie unitaire
 marketing/angles-publicitaires.md  4 angles, budget de test, règles de coupe
 marketing/scripts-ugc.md        5 scripts vidéo prêts à tourner
@@ -33,6 +52,7 @@ boutique/emails-relance.md      Séquences panier abandonné et post-achat
 boutique/pages-legales/         Modèles : mentions légales, livraison, rétractation
 ops/checklist-lancement.md      Ordre d'exécution avant la première pub
 ops/conformite-ce-gpsr.md       CE, GPSR, DEEE — obligatoire sur un produit électrique
+ops/dsers-connexion.md          Installation DSers, mapping, grille de sourcing, seuils
 shopify-import/produits.csv     Sauvegarde / réimport du catalogue
 ```
 
@@ -42,14 +62,22 @@ shopify-import/produits.csv     Sauvegarde / réimport du catalogue
 - **1,96** de ROAS au point mort. En dessous, tu perds de l'argent.
 - **22 €** de CPA maximum. Au-delà, coupe.
 
-## Les trois choses à faire avant de dépenser en publicité
+## Les quatre choses à faire avant de dépenser en publicité
 
-1. **Commander un échantillon.** Tu ne peux pas vendre un appareil électrique que tu n'as pas
-   tenu en main, ni filmer des créas sans lui.
-2. **Obtenir la déclaration UE de conformité** du fournisseur (marquage CE). Sans ce document,
-   ne vends pas — voir `ops/conformite-ce-gpsr.md`.
-3. **Vérifier la saturation actuelle** dans la Meta Ad Library, filtre France. C'est le risque
-   numéro un de ce produit, et il est documenté sans être minimisé dans l'analyse.
+Aucune ne peut être faite à ta place — les trois premières demandent ton navigateur ou ta carte.
+
+1. **Installer DSers et mapper les variantes.** L'installation d'une app Shopify passe par un
+   consentement OAuth sous ton compte : l'API ne le permet pas à un tiers. Vingt minutes,
+   pas à pas dans `ops/dsers-connexion.md`. Une variante non mappée = une commande qui échoue
+   après que tu as payé la publicité.
+2. **Remplir les trois pages légales et les publier.** Elles sont créées mais masquées tant que
+   les crochets ne sont pas remplis.
+3. **Commander un échantillon.** Tu ne peux pas vendre un appareil électrique que tu n'as pas
+   tenu en main, ni filmer des créas sans lui — ni remplacer les illustrations par de vraies
+   photos.
+4. **Obtenir la déclaration UE de conformité** (marquage CE) et **vérifier la saturation** dans
+   la Meta Ad Library, filtre France. Sans le premier document, ne vends pas. Le second est le
+   risque numéro un de ce produit, documenté sans être minimisé dans l'analyse.
 
 ## Avertissements
 
