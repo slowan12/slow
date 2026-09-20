@@ -5,7 +5,7 @@
 ### E-mail 1 — 1 heure après
 **Objet :** Vous avez laissé quelque chose
 > Bonjour,
-> Votre lampe Lueur vous attend encore dans votre panier.
+> Votre lampe CERA vous attend encore dans votre panier.
 > Si vous hésitez, c'est peut-être sur un point précis — répondez à cet e-mail, on vous répond
 > nous-mêmes, sans robot.
 > [Reprendre ma commande]

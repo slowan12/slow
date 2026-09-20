@@ -1,4 +1,4 @@
-# Checklist de lancement — Lueur Maison
+# Checklist de lancement — CERA
 
 Ordre d'exécution. Ne lance pas de publicité tant que la section 1 n'est pas cochée en entier.
 
@@ -19,8 +19,8 @@ Ordre d'exécution. Ne lance pas de publicité tant que la section 1 n'est pas c
 
 ## 2. Configuration Shopify
 
-- [ ] Nom de domaine acheté et connecté (ex. `lueurmaison.fr`). **Vérifier d'abord la
-      disponibilité de la marque sur [data.inpi.fr](https://data.inpi.fr)** — le nom « Lueur
+- [ ] Nom de domaine acheté et connecté (ex. `cera-maison.fr`). **Vérifier d'abord la
+      disponibilité de la marque sur [data.inpi.fr](https://data.inpi.fr)** — le nom « CERA
       Maison » est une proposition, pas une garantie de disponibilité.
 - [ ] Thème installé et personnalisé (Dawn suffit largement pour démarrer).
 - [ ] **Frais de port : offerts, intégrés au prix.** Un frais de port surprise au checkout est la

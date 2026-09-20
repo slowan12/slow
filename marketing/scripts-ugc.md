@@ -43,7 +43,7 @@ Deux bocaux côte à côte : l'un noirci par la suie, l'autre impeccable.
 ## Créa 4 — « Routine du soir » (angle ambiance, retargeting)
 
 Pas de discours commercial. Plans lents : rideaux qu'on ferme, lampe qu'on allume, variateur qu'on
-tourne, livre, plaid. Texte à l'écran seulement à la fin : « Lueur. 44,90 €. »
+tourne, livre, plaid. Texte à l'écran seulement à la fin : « CERA. 44,90 €. »
 Cette créa travaille le désir, pas l'argument — elle performe surtout en retargeting.
 
 ---

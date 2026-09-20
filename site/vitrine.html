@@ -1,11 +1,11 @@
-<title>Lueur Maison</title>
+<title>CERA</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;1,300;1,400&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
 
 <style>
 /* ===========================================================
-   LUEUR MAISON — boutique
+   CERA — boutique
    Palette : papier blanc, encre neutre, un vert pin comme
    unique couleur de marque, un miel réservé à la lumière.
    =========================================================== */
@@ -446,11 +446,11 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
   <div class="wrap masthead-in">
     <a class="brand" href="#/">
       <svg class="mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M5 9h14l-2 5H7L5 9Z" fill="var(--pine)"/>
-        <path d="M12 14v6M8 20h8" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round"/>
-        <circle cx="12" cy="6" r="2.2" fill="var(--honey)"/>
+        <ellipse cx="12" cy="7.5" rx="7" ry="2.6" fill="var(--honey)"/>
+        <path d="M6 12h12l-1.3 8.2a1.6 1.6 0 0 1-1.6 1.3H8.9a1.6 1.6 0 0 1-1.6-1.3z" fill="var(--pine)"/>
+        <ellipse cx="12" cy="12" rx="6" ry="1.9" fill="var(--honey-lit)"/>
       </svg>
-      Lueur Maison
+      CERA
     </a>
 
     <nav class="mainnav" id="nav">
@@ -525,7 +525,7 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
   </div>
 
   <section class="showcase">
-    <img id="img-hero" src="visuels/photo/hero.jpg" alt="La lampe Lueur allumée sur une table, le soir, dans une pièce sombre" loading="lazy" decoding="async">
+    <img id="img-hero" src="visuels/photo/hero.jpg" alt="La lampe CERA allumée sur une table, le soir, dans une pièce sombre" loading="lazy" decoding="async">
     <div class="over"><div class="over-in">
       <h2>Une lumière basse, et rien qui brûle.</h2>
       <p>35 W, 2700 K, un variateur. Assez pour faire fondre la cire, assez peu pour rester allumée toute la soirée.</p>
@@ -580,7 +580,7 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
             <div class="bar-track"><div class="bar-fill flame"></div></div>
           </div>
           <div class="bar-row">
-            <div class="bar-top"><span class="bar-name">Sur la lampe Lueur</span><span class="bar-val num">80 h</span></div>
+            <div class="bar-top"><span class="bar-name">Sur la lampe CERA</span><span class="bar-val num">80 h</span></div>
             <div class="bar-track"><div class="bar-fill lamp"></div></div>
           </div>
         </div>
@@ -615,7 +615,7 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
       </div>
 
       <div>
-        <span class="label">Lueur Maison</span>
+        <span class="label">CERA</span>
         <h1 style="margin-top:10px;">Lampe chauffe-bougie</h1>
         <div class="pricerow">
           <span class="now num" id="pdpprice">44,90 €</span>
@@ -779,7 +779,7 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
             <path d="M12 14v6M8 20h8" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round"/>
             <circle cx="12" cy="6" r="2.2" fill="var(--honey)"/>
           </svg>
-          Lueur Maison
+          CERA
         </a>
         <p class="prose">
           Une lampe qui fait fondre les bougies au lieu de les brûler.
@@ -816,7 +816,7 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
     </div>
 
     <div class="footbase">
-      <span>© 2026 Lueur Maison</span>
+      <span>© 2026 CERA</span>
       <span>Conformité CE — directives 2014/35/UE et 2014/30/UE</span>
       <span>Paiement sécurisé · CB · Visa · Mastercard · PayPal</span>
     </div>
@@ -874,10 +874,10 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
   function lamp(colorId) {
     var names = { noir: "noir mat", ivoire: "blanc ivoire", laiton: "laiton brossé" };
     var id = names[colorId] ? colorId : "noir";
-    return pic("lampe-" + id, "Lampe chauffe-bougie Lueur, coloris " + names[id]);
+    return pic("lampe-" + id, "Lampe chauffe-bougie CERA, coloris " + names[id]);
   }
-  function candle() { return pic("bougie-cedre", "Bougie parfumée Lueur 180 g en pot de verre"); }
-  function box()    { return pic("coffret", "Coffret cadeau Lueur fermé par un ruban"); }
+  function candle() { return pic("bougie-cedre", "Bougie parfumée CERA 180 g en pot de verre"); }
+  function box()    { return pic("coffret", "Coffret cadeau CERA fermé par un ruban"); }
   function bulbs()  { return pic("ampoules", "Deux ampoules halogènes GU10"); }
 
   /* ---------- Catalogue ---------- */
@@ -890,7 +890,7 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
 
   var PRODUCTS = {
     lampe:   { name: "Lampe chauffe-bougie", sub: "3 coloris · variateur · minuteur", price: 44.90, was: 69.90, art: function () { return lamp("noir"); }, href: "#/lampe" },
-    coffret: { name: "Coffret Lueur",        sub: "Lampe + 2 bougies parfumées",      price: 59.90, was: 84.70, art: box,    href: "#/boutique" },
+    coffret: { name: "Coffret CERA",        sub: "Lampe + 2 bougies parfumées",      price: 59.90, was: 84.70, art: box,    href: "#/boutique" },
     bougie:  { name: "Bougie 180 g",         sub: "Cire de soja · 3 parfums",         price: 19.90, was: null,  art: candle, href: "#/boutique" },
     ampoule: { name: "Ampoules GU10",        sub: "Lot de 2 · 35 W · 2700 K",         price: 9.90,  was: null,  art: bulbs,  href: "#/boutique" }
   };
@@ -901,7 +901,7 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
 
   /* ---------- État ---------- */
 
-  var KEY = "lueur.cart.v1";
+  var KEY = "cera.cart.v1";
   var cart = [];
   var chosen = 0;
   var qty = 1;

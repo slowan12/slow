@@ -169,7 +169,7 @@ directe, et elle contredit une partie de ce que j'ai construit :
 | Lot de 3 lampes identiques | 1 | 3 € | **1,00 €** |
 | Coffret lampe + bougies | **2** | **6 €** | 6,00 € |
 
-**Le « Coffret Lueur » que j'ai créé sur la boutique coûte 6 € de droit au lieu de 3 €**, parce
+**Le « Coffret CERA » que j'ai créé sur la boutique coûte 6 € de droit au lieu de 3 €**, parce
 qu'il mélange deux catégories tarifaires dans un seul colis. À vérifier avec un transitaire, puis
 soit à repositionner en prix, soit à expédier en deux colis, soit à remplacer par une offre
 « lot de 2 » qui, elle, divise le droit par deux.

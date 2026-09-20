@@ -50,11 +50,11 @@ Les 4 produits existent déjà sur la boutique avec leurs SKU :
 
 | SKU | Produit | Prix |
 |---|---|---|
-| `LUEUR-CWL-NOIR` / `-IVOIRE` | Lampe chauffe-bougie | 44,90 € |
-| `LUEUR-CWL-LAITON` | Lampe, laiton brossé | 49,90 € |
-| `LUEUR-BOX-NOIR` / `-IVOIRE` | Coffret | 59,90 € |
-| `LUEUR-BOUGIE-*` | Bougie 180 g | 19,90 € |
-| `LUEUR-AMP-GU10-X2` | Ampoules GU10 | 9,90 € |
+| `CERA-CWL-NOIR` / `-IVOIRE` | Lampe chauffe-bougie | 44,90 € |
+| `CERA-CWL-LAITON` | Lampe, laiton brossé | 49,90 € |
+| `CERA-BOX-NOIR` / `-IVOIRE` | Coffret | 59,90 € |
+| `CERA-BOUGIE-*` | Bougie 180 g | 19,90 € |
+| `CERA-AMP-GU10-X2` | Ampoules GU10 | 9,90 € |
 
 Dans DSers : **Import List → Mapping → Advanced Mapping**, et relie chaque variante Shopify à
 la variante fournisseur exacte (le bon coloris). Une variante non mappée = une commande qui

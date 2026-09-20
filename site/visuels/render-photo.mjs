@@ -240,7 +240,7 @@ function boxSVG() {
 <path d="M310 254c-26-38-56-54-72-38-15 15 4 34 72 38 68-4 87-23 72-38-16-16-46 0-72 38Z" fill="url(#rb)"/>
 <ellipse cx="310" cy="256" rx="17" ry="12" fill="#C9A344"/>
 <path d="M132 330l-10 270" stroke="#6E9C84" stroke-opacity="0.35" stroke-width="7" filter="url(#kb)"/>
-<text x="310" y="470" text-anchor="middle" font-family="Georgia,serif" font-size="30" letter-spacing="7" fill="#DCE9E0" opacity="0.55">LUEUR</text>
+<text x="310" y="470" text-anchor="middle" font-family="Georgia,serif" font-size="30" letter-spacing="7" fill="#DCE9E0" opacity="0.55">CERA</text>
 </svg>`;
 }
 

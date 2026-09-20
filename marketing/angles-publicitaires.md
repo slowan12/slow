@@ -1,4 +1,4 @@
-# Angles publicitaires — Lampe chauffe-bougie Lueur
+# Angles publicitaires — Lampe chauffe-bougie CERA
 
 ## Le principe directeur
 

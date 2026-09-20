@@ -1,4 +1,4 @@
-# Lueur Maison — boutique Shopify hiver 2026
+# CERA — boutique Shopify hiver 2026
 
 Kit complet pour lancer une boutique mono-produit autour d'une **lampe chauffe-bougie**,
 produit retenu après comparaison de 6 candidats hivernaux.
@@ -14,11 +14,11 @@ en bas de ce fichier.
 
 | Élément | Prix | Statut |
 |---|---|---|
-| Lampe Chauffe-Bougie Lueur (3 coloris) | 44,90 € / 49,90 € | **Actif, 5 visuels** |
-| Coffret Lueur (lampe + 2 bougies) | 59,90 € | **Actif, 1 visuel** |
+| Lampe Chauffe-Bougie CERA (3 coloris) | 44,90 € / 49,90 € | **Actif, 5 visuels** |
+| Coffret CERA (lampe + 2 bougies) | 59,90 € | **Actif, 1 visuel** |
 | Bougie parfumée 180 g (3 parfums) | 19,90 € | **Actif, 3 visuels** |
 | Ampoules GU10, lot de 2 | 9,90 € | **Actif, 1 visuel** |
-| Collection « Collection Hiver — Lueur Maison » | — | Créée |
+| Collection « Collection Hiver — CERA » | — | Créée |
 | Collection « Idées cadeaux » (automatique, par tag) | — | Créée |
 | Promotion automatique « La 2ᵉ lampe à −15 % » | — | **Active** |
 | Page « Questions fréquentes » | — | **Publiée** |
@@ -56,6 +56,7 @@ boutique/pages-legales/         Modèles : mentions légales, livraison, rétrac
 ops/checklist-lancement.md      Ordre d'exécution avant la première pub
 ops/conformite-ce-gpsr.md       CE, GPSR, DEEE — obligatoire sur un produit électrique
 ops/dsers-connexion.md          Installation DSers, mapping, grille de sourcing, seuils
+marketing/nom-de-marque.md      Le nom CERA : pourquoi, et ce qui reste a verifier
 site/visuels/photos-fournisseur.md  Basculer le site et Shopify sur les photos AliExpress
 shopify-import/produits.csv     Sauvegarde / réimport du catalogue
 ```
@@ -88,8 +89,9 @@ Aucune ne peut être faite à ta place — les trois premières demandent ton na
 - Les chiffres de l'analyse sont des **estimations de marché** issues de la recherche sectorielle
   2026, pas des données scrapées en direct. Les vérifications de `analyse/analyse-produits.md`
   §6 sont à faire avant tout engagement budgétaire.
-- « Lueur Maison » est une **proposition de nom**. Vérifie la disponibilité sur
-  [data.inpi.fr](https://data.inpi.fr) et celle du domaine avant de l'utiliser.
+- Le nom **CERA** est posé partout (site, Shopify, SKU, documents) mais **son antériorité
+  n'a pas pu être vérifiée** depuis cet environnement. Recherche INPI classes 4, 11 et 3 avant
+  toute dépense publicitaire — voir `marketing/nom-de-marque.md`.
 - Les pages légales sont des **modèles à compléter et à faire relire**, pas des documents validés.
 - Rien ici n'est un conseil juridique, comptable ou financier.
 
