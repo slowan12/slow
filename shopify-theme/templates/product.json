@@ -33,14 +33,6 @@
           "type": "description",
           "settings": {}
         },
-        "specs": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Caractéristiques",
-            "icon": "none",
-            "content": "<ul><li>Ampoule GU10 halogène, 35 W, 2700 K</li><li>Alimentation 220–240 V, câble 1,5 m, prise type E</li><li>Hauteur réglable de 26 à 34 cm</li><li>Socle lesté, Ø 16 cm</li><li>Minuteur 2 h / 4 h / 6 h, variateur d'intensité</li><li>Compatible bougies en pot jusqu'à 10 cm de diamètre</li><li>2 ampoules fournies, dont une de rechange</li></ul>"
-          }
-        },
         "expedition": {
           "type": "collapsible_tab",
           "settings": {
@@ -65,7 +57,6 @@
         "quantite",
         "acheter",
         "description",
-        "specs",
         "expedition",
         "retours"
       ],

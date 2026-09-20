@@ -11,6 +11,9 @@ par défaut tant que tu ne l'actives pas. Zéro risque.
 | `config/settings_data.json` | Palette CERA sur les 5 schémas de couleur, typographie, rayons, cartes, panier en tiroir, **logo et favicon** |
 | `templates/index.json` | La page d'accueil : 6 sections |
 | `templates/product.json` | La fiche produit : galerie à vignettes, zoom, volets repliables, produits associés |
+| `templates/collection.json` | Le catalogue : images portrait, ajout rapide, bandeau de garanties |
+| `sections/header-group.json` | Bandeau d'annonce et en-tête |
+| `sections/footer-group.json` | Pied de page : marque, liens d'aide, moyens de paiement |
 
 ### Le nom affiché
 
@@ -49,6 +52,34 @@ détail du bain de cire, cotes, les deux autres coloris, et le duo.
 
 ⚠️ Un bloc `icon_with_text` a été refusé — il n'existe pas dans le schéma de cette version de
 Dawn. Retiré ; les garanties sont portées par la section en dessous.
+
+### La navigation
+
+Les deux menus étaient génériques — « Accueil / Catalogue / Contact » et un pied de page
+réduit à « Recherche ». Refaits via l'API :
+
+- **Menu principal** : Accueil · La lampe · Boutique *(sous-menu des 4 produits)* · Aide
+- **Pied de page** : FAQ · Livraison · Rétractation et retours · CGV · Mentions légales ·
+  Nous contacter
+
+⚠️ Quatre de ces liens pointent vers des pages **non publiées**. Elles renverront une erreur
+tant que les champs entre crochets ne sont pas remplis — voir
+`boutique/pages-legales/_a-completer.md`. Le menu est correct ; ce sont les pages qui attendent.
+
+### Ce qui parlait encore anglais
+
+Le thème affichait **« Welcome to our store »** dans le bandeau d'annonce et **« Subscribe to
+our emails »** en pied de page. C'est le genre de détail qui fait amateur en trois secondes.
+Remplacés, et les sélecteurs de pays et de langue sont désactivés : une boutique qui ne livre
+qu'en France n'a rien à faire d'un sélecteur de devise.
+
+### Un volet qui mentait
+
+Le gabarit de fiche produit portait un volet « Caractéristiques » **écrit en dur avec les specs
+de la lampe** — il se serait affiché à l'identique sur le coffret, la bougie et les ampoules.
+Retiré : les caractéristiques appartiennent au produit, pas au gabarit. Chaque fiche porte
+désormais son propre tableau dans sa description. Les volets Livraison et Retours restent au
+gabarit, parce qu'eux sont réellement communs.
 
 ### La palette
 
