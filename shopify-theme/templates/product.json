@@ -1,0 +1,159 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "titre": {
+          "type": "title",
+          "settings": {}
+        },
+        "prix": {
+          "type": "price",
+          "settings": {}
+        },
+        "variantes": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantite": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "acheter": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "specs": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Caractéristiques",
+            "icon": "none",
+            "content": "<ul><li>Ampoule GU10 halogène, 35 W, 2700 K</li><li>Alimentation 220–240 V, câble 1,5 m, prise type E</li><li>Hauteur réglable de 26 à 34 cm</li><li>Socle lesté, Ø 16 cm</li><li>Minuteur 2 h / 4 h / 6 h, variateur d'intensité</li><li>Compatible bougies en pot jusqu'à 10 cm de diamètre</li><li>2 ampoules fournies, dont une de rechange</li></ul>"
+          }
+        },
+        "expedition": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Livraison",
+            "icon": "none",
+            "content": "<p>Préparation sous 24 à 48 h ouvrées, puis 8 à 15 jours ouvrés en France métropolitaine. Numéro de suivi transmis dès l'expédition.</p><p>Nos produits sont expédiés depuis nos entrepôts partenaires situés en Asie. Ce délai est plus long que celui d'un marchand local, et nous préférons l'annoncer clairement.</p><p>Frais de port offerts, sans minimum de commande.</p>"
+          }
+        },
+        "retours": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Retours et garantie",
+            "icon": "none",
+            "content": "<ul><li>Droit de rétractation légal : 14 jours à compter de la réception.</li><li>Garantie commerciale : 30 jours, remboursement intégral.</li><li>Garantie légale de conformité : 2 ans.</li><li>Produit défectueux : une photo suffit, nous remboursons ou remplaçons.</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "titre",
+        "prix",
+        "variantes",
+        "quantite",
+        "acheter",
+        "description",
+        "specs",
+        "expedition",
+        "retours"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "garanties": {
+      "type": "multicolumn",
+      "blocks": {
+        "g1": {
+          "type": "column",
+          "settings": {
+            "title": "Pas de flamme",
+            "text": "<p>Vous pouvez la laisser allumée dans une pièce où dorment un enfant ou un animal.</p>"
+          }
+        },
+        "g2": {
+          "type": "column",
+          "settings": {
+            "title": "Pas de suie",
+            "text": "<p>Le verre de votre bougie reste propre, les murs aussi.</p>"
+          }
+        },
+        "g3": {
+          "type": "column",
+          "settings": {
+            "title": "Deux fois plus long",
+            "text": "<p>La cire fond, elle ne brûle pas. Elle se refond autant de fois que nécessaire.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "similaires": {
+      "type": "related-products",
+      "settings": {
+        "heading": "À associer",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "garanties",
+    "similaires"
+  ]
+}

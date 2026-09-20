@@ -10,6 +10,7 @@ par défaut tant que tu ne l'actives pas. Zéro risque.
 |---|---|
 | `config/settings_data.json` | Palette CERA sur les 5 schémas de couleur, typographie, rayons, cartes, panier en tiroir, **logo et favicon** |
 | `templates/index.json` | La page d'accueil : 6 sections |
+| `templates/product.json` | La fiche produit : galerie à vignettes, zoom, volets repliables, produits associés |
 
 ### Le nom affiché
 
@@ -36,6 +37,18 @@ confirmation de commande**. D'où l'intérêt de faire quand même le renommage 
 4. **Bandeau détail** — le gros plan du bain de cire, « La chaleur vient du dessus »
 5. **Collection** — les 4 produits, image portrait, ajout rapide
 6. **Quatre garanties** — livraison, expédition, essai, paiement
+
+### La fiche produit
+
+Galerie à vignettes avec zoom en lightbox, colonne d'achat collante au défilement, puis
+trois volets repliables — caractéristiques, livraison, retours. En dessous, trois arguments
+et les produits associés.
+
+La fiche lampe porte désormais **sept visuels** : plan principal, macro de l'abat-jour, plan
+détail du bain de cire, cotes, les deux autres coloris, et le duo.
+
+⚠️ Un bloc `icon_with_text` a été refusé — il n'existe pas dans le schéma de cette version de
+Dawn. Retiré ; les garanties sont portées par la section en dessous.
 
 ### La palette
 
