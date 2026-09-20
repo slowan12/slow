@@ -61,16 +61,22 @@ shopify-import/produits.csv     Sauvegarde / réimport du catalogue
 - Les pages légales sont des **modèles à compléter et à faire relire**, pas des documents validés.
 - Rien ici n'est un conseil juridique, comptable ou financier.
 
-## La vitrine
+## Le site
 
-`site/vitrine.html` — maquette de la page d'accueil, publiée ici :
+`site/vitrine.html` — boutique complete, publiee ici :
 https://claude.ai/artifact/RfYSscVv9ia1i4bHmGzo4Y
 
-Direction artistique : la pièce sombre contre la lumière chaude. Les neutres tirent
-vers le bleu froid (la pièce), l'accent est un ambre 2700 K (la lampe). Le thème
-clair correspond au matin, lampe éteinte ; le thème sombre au soir, lampe allumée.
-Le variateur du hero pilote réellement l'éclairage de la page.
+Quatre pages avec navigation par ancre (`#/`, `#/lampe`, `#/boutique`, `#/aide`,
+`#/panier`) : accueil, fiche produit avec selecteur de coloris, catalogue, aide et
+panier fonctionnel (ajout, quantites, retrait, sous-total, persistance locale).
 
-Typographie : Instrument Serif (titres), Karla (texte), JetBrains Mono (mesures).
-Les illustrations sont des SVG dessinés à la main — à remplacer par les
-photographies dès que l'échantillon est reçu.
+Direction artistique : papier blanc, encre neutre, un vert pin comme unique couleur
+de marque, un miel reserve a la lumiere de l'ampoule. Illustrations au trait.
+Typographie Schibsted Grotesk (structure) et Newsreader (texte courant).
+Themes clair et sombre.
+
+Une premiere direction plus sombre et atmospherique existe dans l'historique git
+(commit « Ajout de la vitrine Lueur Maison ») si tu veux la recuperer.
+
+Les illustrations sont des SVG dessines a la main, a remplacer par les
+photographies des que l'echantillon est recu. Le paiement n'est pas connecte.
