@@ -8,8 +8,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const CLES = ['lampe-noir', 'lampe-ivoire', 'lampe-laiton', 'detail', 'hero', 'duo',
-              'coffret', 'bougie-cedre', 'bougie-vanille', 'bougie-figue', 'ampoules'];
+const CLES = ['lampe-noir', 'lampe-ivoire', 'lampe-laiton', 'detail', 'macro-abatjour',
+              'cotes', 'hero', 'duo', 'coffret', 'bougie-cedre', 'bougie-vanille',
+              'bougie-figue', 'ampoules'];
 
 const src = process.argv[2];
 if (!src) { console.error('usage : node appliquer-urls.mjs urls.json'); process.exit(1); }

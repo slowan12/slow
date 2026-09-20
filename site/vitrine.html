@@ -313,6 +313,8 @@ h2 { font-size: clamp(26px, 3.6vw, 38px); line-height: 1.16; }
 @media (max-width: 900px) { .pdp { grid-template-columns: 1fr; } }
 
 .gallery { display: flex; flex-direction: column; gap: 12px; }
+.galerie2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 560px) { .galerie2 { grid-template-columns: 1fr; } }
 .thumbs { display: flex; gap: 10px; }
 .thumb {
   width: 82px; height: 82px; flex: none; padding: 0; cursor: pointer; overflow: hidden;
@@ -612,6 +614,10 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
         <div class="shot" style="aspect-ratio:16/10;">
           <img class="img-detail" src="visuels/photo/detail.jpg" alt="Gros plan du bain de cire fondue éclairé par l'ampoule" loading="lazy" decoding="async">
         </div>
+        <div class="galerie2">
+          <div class="shot"><img id="img-macro" src="visuels/photo/macro-abatjour.jpg" alt="L'abat-jour laiton et l'ampoule halogène de 35 W, vus de près" loading="lazy" decoding="async"></div>
+          <div class="shot" style="background:#FAF9F6;"><img id="img-cotes" src="visuels/photo/cotes.jpg" alt="Cotes de la lampe : hauteur réglable de 26 à 34 cm, socle de 16 cm de diamètre" loading="lazy" decoding="async" style="object-fit:contain;"></div>
+        </div>
       </div>
 
       <div>
@@ -857,6 +863,8 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
     "lampe-ivoire":    "visuels/photo/lampe-ivoire.jpg",
     "lampe-laiton":    "visuels/photo/lampe-laiton.jpg",
     "detail":          "visuels/photo/detail.jpg",
+    "macro-abatjour":  "visuels/photo/macro-abatjour.jpg",
+    "cotes":           "visuels/photo/cotes.jpg",
     "hero":            "visuels/photo/hero.jpg",
     "duo":             "visuels/photo/duo.jpg",
     "coffret":         "visuels/photo/coffret.jpg",
@@ -1120,6 +1128,10 @@ footer { border-top: 1px solid var(--line); background: var(--paper-alt); }
     Array.prototype.forEach.call(document.querySelectorAll(".img-detail"), function (el) {
       if (VISUELS.detail) el.src = VISUELS.detail;
     });
+    var macro = document.getElementById("img-macro");
+    if (macro && VISUELS["macro-abatjour"]) macro.src = VISUELS["macro-abatjour"];
+    var cotes = document.getElementById("img-cotes");
+    if (cotes && VISUELS.cotes) cotes.src = VISUELS.cotes;
   })();
 
   load();
