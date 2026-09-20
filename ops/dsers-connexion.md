@@ -10,6 +10,34 @@
 
 ---
 
+## 0. Ce que tu peux me déléguer, et ce que non
+
+**Tu m'as déjà donné l'accès que je peux utiliser.** Le connecteur Claude est installé sur la
+boutique : c'est par lui que j'ai créé les produits, écrit le thème, corrigé la livraison. Cet
+accès est une clé d'API, et il couvre tout ce qui s'écrit par l'API.
+
+**L'installation d'une application n'en fait pas partie**, et ce n'est pas un problème de
+droits. C'est un consentement OAuth : Shopify affiche un écran qui demande à *une personne
+connectée* d'autoriser l'app, et enregistre ce consentement. Il n'existe aucun jeton, aucune
+clé, aucun code qui transfère ce geste à un tiers.
+
+S'y ajoute une limite de mon environnement : `admin.shopify.com`, `accounts.shopify.com` et
+`apps.shopify.com` sont **tous refusés par la politique réseau** ici. Même avec un navigateur,
+je n'atteindrais pas la page.
+
+> ⚠️ **Ne m'envoie jamais ton mot de passe Shopify ou AliExpress** — ni ici, ni ailleurs. Je ne
+> m'en servirais pas, et un mot de passe écrit dans une conversation est un mot de passe à
+> changer. Aucune étape de ce guide n'en a besoin.
+
+| Étape | Qui |
+|---|---|
+| Installer DSers, lier AliExpress | **Toi**, dans ton navigateur |
+| Choisir le fournisseur, poser les questions DDP et CE | **Toi** |
+| Mapper les variantes | Toi — ou moi, si tu me donnes les URLs produit |
+| Vérifier les coûts contre le seuil de rentabilité | **Moi** |
+| Mettre à jour l'analyse avec les chiffres réels | **Moi** |
+| Rattacher les photos du fournisseur aux fiches | **Moi**, si tu me donnes les URLs |
+
 ## 1. Pourquoi DSers plutôt qu'autre chose
 
 DSers est le successeur officiel d'Oberlo (arrêté en 2022) et la solution AliExpress de
