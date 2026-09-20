@@ -119,10 +119,23 @@ Sept produits que tu verras recommandés partout, et qui ne passent pas le filtr
 
 ## 5. Verdict
 
-**La lampe chauffe-bougie reste le bon choix.** La recherche refaite avec le filtre import
-converge sur la même réponse que la première fois — mais pour une raison bien plus solide
-qu'alors : ce n'est pas seulement un bon produit, c'est **l'un des rares produits hivernaux à
-fort ticket qui n'a pas de prix de référence en rayon en France**.
+**La lampe chauffe-bougie reste un choix défendable, mais pas pour la raison écrite ici
+à l'origine.** La version initiale de ce verdict disait que le produit « n'a pas de prix de
+référence en rayon en France ». **C'est faux, et il faut le corriger franchement :**
+
+- **Amazon.fr** liste des modèles génériques de 9,99 € à 35,99 €, sous une douzaine de marques
+  interchangeables.
+- **Leroy Merlin** et **ManoMano** référencent le même produit, avec la même fiche technique
+  que la nôtre : variateur, minuterie 2/4/8 h, hauteur réglable, deux ampoules de 35 W.
+
+Autrement dit le prix de référence existe, il est public, et il est bas. Vendre 44,90 € une
+lampe que le client retrouve chez Leroy Merlin ne tient pas sur le produit seul : ça ne tient
+que sur la marque, la bougie au bon format, le coffret, et le service (retours, délais
+annoncés honnêtement). **C'est là qu'est la marge, pas dans la lampe.**
+
+Conséquence pratique : ne construis pas la publicité sur « un objet qu'on ne trouve pas
+ailleurs ». Construis-la sur l'usage — une bougie qui dure deux fois plus longtemps — et vends
+l'abonnement implicite aux recharges.
 
 **Le chauffe-tasse devient ton deuxième produit**, pas un remplaçant. Il monte le panier moyen,
 il partage la même audience « confort à la maison », et sa faible saturation en fait une
