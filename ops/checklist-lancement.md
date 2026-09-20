@@ -28,6 +28,12 @@ Ordre d'exécution. Ne lance pas de publicité tant que la section 1 n'est pas c
 
 ## 2. Configuration Shopify
 
+- [ ] **Vérifier que chaque collection est publiée sur le canal « Boutique en ligne ».**
+      Une collection créée par l'API ne l'est sur aucun canal par défaut, et les produits
+      publiés n'y changent rien : la vitrine ne la trouve pas, les liens du menu ne mènent
+      nulle part, et le thème affiche ses produits de démonstration (des t-shirts à 19,99 €)
+      à la place des tiens. Ça s'est produit ici. À revérifier à chaque nouvelle collection.
+
 - [ ] Nom de domaine acheté et connecté (ex. `cera-maison.fr`). **Vérifier d'abord la
       disponibilité de la marque sur [data.inpi.fr](https://data.inpi.fr)** — le nom « CERA
       Maison » est une proposition, pas une garantie de disponibilité.
