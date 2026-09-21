@@ -159,6 +159,56 @@ tu le remplaces par l'offre lot de 2. À trancher avec un transitaire.
 
 ---
 
+## 4 bis. Ce qui est déjà câblé côté Shopify
+
+Vérifié le 21/09/2026. Tout ceci est fait — inutile d'y revenir.
+
+| Élément | État | Pourquoi ça compte |
+|---|---|---|
+| **Service d'expédition DSers** | `dsers-fulfillment-service`, type `THIRD_PARTY`, avec son emplacement dédié | C'est le tuyau par lequel les commandes descendent vers DSers. Créé automatiquement à l'installation. |
+| **Codes douaniers (SH)** | Posés sur les 9 variantes | Sans eux, un colis part sans déclaration exploitable. Lampe et coffret `940529`, bougies `340600`, ampoules `853921`. |
+| **Pays d'origine** | `CN` sur les 9 variantes | Mention obligatoire en douane. |
+| **Poids** | 700 g (lampe), 760 g (laiton), 1150 g (coffret), 330 g (bougie), 90 g (ampoules) | Base du calcul de port et de la déclaration. |
+| **Suivi d'inventaire** | Désactivé | Volontaire : la boutique accepte les commandes sans stock déclaré. C'est le bon réglage en dropshipping. |
+| **Zones d'expédition** | France seule, livraison offerte, UE et International désactivés | Les pages légales ne couvrent que la France. |
+| **Fiche fournisseur** | 6 champs méta sur chaque produit | Voir ci-dessous. |
+
+### Les 6 champs fournisseur
+
+Ils apparaissent maintenant sur chaque fiche produit dans l'admin Shopify, épinglés.
+À remplir dès que le fournisseur est choisi — c'est la mémoire de l'opération.
+
+| Champ | Type | À quoi il sert |
+|---|---|---|
+| Fournisseur | texte | Qui fabrique. Si le vendeur disparaît, on sait qui chercher. |
+| Fiche produit fournisseur | URL | Le lien AliExpress mappé dans DSers. |
+| Coût rendu (EUR) | décimal | Prix d'achat + port. Sert au calcul de marge de `analyse/analyse-import-hiver-2026.md` §6. |
+| Délai fournisseur (jours ouvrés) | entier | Doit rester ≤ 15 pour tenir la promesse affichée en boutique. |
+| Expédition DDP confirmée | oui/non | **Bloquant avant la première vente.** |
+| Déclaration UE de conformité reçue | oui/non | **Bloquant** sur tout produit électrique. |
+
+### Ce qui reste, et pourquoi je ne l'ai pas fait
+
+**Le coût unitaire (`cost per item`).** Volontairement laissé vide. C'est DSers qui le renseigne
+au mapping, et une valeur inventée ferait mentir les rapports de marge de Shopify. Mieux vaut
+un champ vide qu'un chiffre faux.
+
+**Les politiques de remboursement et d'expédition.** L'API me refuse l'accès
+(`write_legal_policies`). Or ce sont **celles-là** que Shopify affiche au moment du paiement —
+pas les pages du site. Aujourd'hui la boutique n'a **qu'une** politique, celle de
+confidentialité, générée automatiquement. Les textes sont prêts dans
+`boutique/pages-legales/politique-remboursement.html` et `politique-expedition.html` :
+copie-colle dans *Admin → Paramètres → Politiques*. **Une boutique qui vend à des consommateurs
+français sans politique de remboursement au paiement est en infraction.**
+
+**Les mentions légales et les CGV en tant que politiques.** Pas encore, et délibérément : elles
+exigent ta raison sociale, ton SIRET et ton statut TVA. Publier `[Raison sociale]` sur une page
+de paiement est pire que de ne rien publier. Voir `_a-completer.md`.
+
+**Basculer l'inventaire vers l'emplacement DSers.** À faire après le mapping, pas avant.
+
+---
+
 ## 5. Ce que DSers ne te dira pas
 
 DSers analyse **l'offre**, pas la demande. Il te dit ce que coûte le produit et qui le vend ;
